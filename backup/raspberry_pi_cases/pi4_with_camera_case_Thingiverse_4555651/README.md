@@ -5,3 +5,7 @@ Raspberry Pi 4 Camera Case by bkahan on Thingiverse: https://www.thingiverse.com
 ## Slices
 
 * [CCR10S_picamera-camera_arm.gcode](CCR10S_picamera-camera_arm.gcode) - Cura, CR-10S, PLA+, default settings
+
+## license
+
+Creative Commons.
