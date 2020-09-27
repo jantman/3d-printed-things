@@ -1,0 +1,4 @@
+Sources for Creality CR-10 Y axis cable drag chain
+
+Creality CR-10 Strain relief bracket for heated bed cable (https://www.thingiverse.com/thing:2186203)
+Printer friendly cable chain (https://www.thingiverse.com/thing:2077551)
