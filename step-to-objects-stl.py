@@ -44,7 +44,8 @@ class ExportedObject:
         self.name = name
         self.parent_path = parent_path
         self.color_rgba = color_rgba
-        dir_path = [out_dir] + self.parent_path
+        self.out_dir = out_dir
+        dir_path = [self.out_dir] + self.parent_path
         self.directory = os.path.join(*dir_path)
         self.fpath = os.path.join(self.directory, self.name + '.stl')
 
@@ -61,7 +62,7 @@ class ExportedObject:
         s = '// ' + ' / '.join(self.parent_path + [self.name]) + '\n'
         if self.color_rgba is not None:
             s += f' color({self.color_rgba}) {{ '
-        s += f' import("{self.fpath}"); '
+        s += f' import("{os.path.relpath(self.fpath, self.out_dir)}"); '
         if self.color_rgba is not None:
             s += ' } '
         return s
@@ -96,7 +97,7 @@ class StepToStlConverter:
         name = safe_filename(o.Label)
         if isinstance(o, Part.Feature):
             try:
-                color_rgba = list(part.ViewObject.DiffuseColor[0])
+                color_rgba = list(o.ViewObject.DiffuseColor[0])
                 assert all([isinstance(x, type(0.5)) for x in color_rgba])
                 # for some reason, it looks like alpha is inverted in
                 # freecad vs openscad
