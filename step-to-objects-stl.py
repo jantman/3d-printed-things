@@ -57,11 +57,16 @@ class ExportedObject:
         Mesh.export([self.obj], self.fpath)
         print('\tfile written')
 
-    @property
-    def scad(self):
+    def scad(self, alpha=None):
         s = '// ' + ' / '.join(self.parent_path + [self.name]) + '\n'
+        s += f'// Placement: Position={self.obj.Placement.Base} ' \
+             f'Rotation={self.obj.Placement.Rotation}\n'
         if self.color_rgba is not None:
-            s += f' color({self.color_rgba}) {{ '
+            if alpha is not None:
+                s += f' color([{self.color_rgba[0]}, {self.color_rgba[1]}, ' \
+                     f'{self.color_rgba[0]}, imported_alpha]) {{ '
+            else:
+                s += f' color({self.color_rgba}) {{ '
         s += f' import("{os.path.relpath(self.fpath, self.out_dir)}"); '
         if self.color_rgba is not None:
             s += ' } '
@@ -75,7 +80,7 @@ class StepToStlConverter:
         self._out_dir = out_dir
         self._objects = []
 
-    def convert(self):
+    def convert(self, alpha=None):
         doc = FreeCAD.newDocument("Unnamed")
         FreeCAD.setActiveDocument("Unnamed")
         ImportGui.insert(self._step_file, "Unnamed")
@@ -87,8 +92,9 @@ class StepToStlConverter:
         )
         print(f'Writing SCAD file with import statements to: {scadfile}')
         with open(scadfile, 'w') as fh:
+            fh.write(f'imported_alpha = {alpha};\n')
             for f in self._objects:
-                fh.write(f.scad + '\n')
+                fh.write(f.scad(alpha=alpha) + '\n')
         print('\tfile written')
         FreeCAD.closeDocument("Unnamed")
 
@@ -128,12 +134,17 @@ def main(argv: List[str]):
         help='Output directory. Defaults to same directory as input file'
     )
     p.add_argument(
+        '-a', '--alpha', dest='alpha', type=float, default=None,
+        help='For objects with color, override alpha to this value (set via a '
+             'variable in SCAD file)'
+    )
+    p.add_argument(
         'STEP_FILE', type=str, action='store', help='STEP file path'
     )
     args = p.parse_args(argv)
     if args.out_dir is None:
         args.out_dir = os.path.dirname(args.STEP_FILE)
-    StepToStlConverter(args.STEP_FILE, args.out_dir).convert()
+    StepToStlConverter(args.STEP_FILE, args.out_dir).convert(args.alpha)
 
 
 if __name__ == "__main__":
