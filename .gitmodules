@@ -1,0 +1,3 @@
+[submodule "my-cr10s/Creality_CR-10"]
+	path = my-cr10s/Creality_CR-10
+	url = https://github.com/Creality3DPrinting/CR-10
