@@ -1,4 +1,11 @@
+use <components/camera_mount.scad>
+
 imported_alpha = 0.5;
+color("red"){
+    translate([-5.5,283,295.75]){
+        camera_mount();
+    }
+}
 translate([-392,285.5,0]){
     rotate([-90,0,-90]){
         // CR-10 / Bottom_Assembly / Profile_Frame / 2020-L400-X-1_2020-L400-B0-1
@@ -729,7 +736,7 @@ translate([-392,285.5,0]){
          color([0.800000011920929, 0.800000011920929, 0.800000011920929, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/2GT-pulley001.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / X_limit_switch_bracket___X
         // Placement: Position=Vector (-82.53998757187092, 41.68027898962476, 186.2002158366238) Rotation=Rotation (0.7071067811865477, 0.7071067811865474, 1.4744781632413514e-28, -1.4856343411512471e-28)
-         color([0.2980392277240753, 0.2980392277240753, 0.2980392277240753, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/X_limit_switch_bracket___X.stl");  }
+        // color([0.2980392277240753, 0.2980392277240753, 0.2980392277240753, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/X_limit_switch_bracket___X.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / M3X6Pan_Head_Screw012
         // Placement: Position=Vector (-75.48998757187093, 49.18027898962471, 170.45021583662378) Rotation=Rotation (2.958947086376716e-28, -0.7071067811865475, -2.960341608615453e-28, 0.7071067811865476)
          color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M3X6Pan_Head_Screw012.stl");  }
