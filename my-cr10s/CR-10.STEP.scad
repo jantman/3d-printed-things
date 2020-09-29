@@ -3,7 +3,7 @@ use <components/camera_mount.scad>
 imported_alpha = 0.5;
 color("red"){
     translate([-5.5,283,295.75]){
-        camera_mount();
+        camera_mount(-76,10);
     }
 }
 translate([-392,285.5,0]){
