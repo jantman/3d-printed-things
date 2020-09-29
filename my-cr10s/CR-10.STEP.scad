@@ -1,13 +1,20 @@
 use <components/camera_mount.scad>
+use <components/rpi_case.scad>
 use <cr10s_z_drive.scad>
 
 imported_alpha = 0.5;
 have_camera_mount = true;
+have_pi_case = true;
 
 color("red"){
     if(have_camera_mount) {
         translate([-5.5,283,295.75]){
             camera_mount(-76,10);
+        }
+    }
+    if(have_pi_case) {
+        translate([3.5,164,-1.5]){
+            rpi_case();
         }
     }
 }
