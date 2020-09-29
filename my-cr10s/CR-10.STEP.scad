@@ -1,10 +1,15 @@
 use <components/camera_mount.scad>
 use <components/rpi_case.scad>
 use <cr10s_z_drive.scad>
+use <cr10s_factory_extruder.scad>
+use <cr10s_factory_hotend_carriage.scad>
+use <cr10s_factory_fan_assembly.scad>
+use <cr10s_factory_hotend.scad>
 
 imported_alpha = 0.5;
 have_camera_mount = true;
 have_pi_case = true;
+have_microswiss = false;
 
 color("red"){
     if(have_camera_mount) {
@@ -26,15 +31,21 @@ color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, imported_alph
         }
     }
 }
+
 // NOTE - the Z-axis drive has been split out into a module, to allow duplication for the second Z drive
 translate([-392,285.5,0]){
     rotate([-90,0,-90]){
-        color("red"){
+        cr10s_z_drive(imported_alpha);
+        translate([0,0,360]){
             cr10s_z_drive(imported_alpha);
-            translate([0,0,360]){
-                cr10s_z_drive(imported_alpha);
-            }
         }
+        if(have_microswiss == false) {
+            cr10s_factory_extruder(imported_alpha);
+            cr10s_factory_hotend_carriage(imported_alpha);
+            cr10s_factory_fan_assembly(imported_alpha);
+            cr10s_factory_hotend(imported_alpha);
+        }
+
         // CR-10 / Bottom_Assembly / Profile_Frame / 2020-L400-X-1_2020-L400-B0-1
         // Placement: Position=Vector (106.59316725311957, 95.86186671422008, 175.4740404428569) Rotation=Rotation (0.0, 0.0, 0.0, 1.0)
          color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, imported_alpha]) {  import("CR-10/Bottom_Assembly/Profile_Frame/2020-L400-X-1_2020-L400-B0-1.stl");  }
@@ -585,9 +596,11 @@ translate([-392,285.5,0]){
         // Placement: Position=Vector (-14.47982919126882, -16.383551011309475, 391.418346491293) Rotation=Rotation (1.0, -6.106226635438337e-16, 9.846535694957022e-16, -5.5777740346814e-16)
          color([0.2980392277240753, 0.2980392277240753, 0.2980392277240753, imported_alpha]) {  import("CR-10/T-jiont_plates-2__T___0.stl");  }
         // CR-10 / Protal_frame_components / 2040-L550-A0-1_2040-550-Z
+        // left-hand Z rail
         // Placement: Position=Vector (-17.98270539670793, -3.8834783010972957, 275.0) Rotation=Rotation (2.092283594625486e-28, -8.639444448372445e-59, 4.129193800766232e-31, 1.0)
          color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, imported_alpha]) {  import("CR-10/Protal_frame_components/2040-L550-A0-1_2040-550-Z.stl");  }
         // CR-10 / Protal_frame_components / 2040-L550-A0-1_2040-L550-B0-1
+        // right-hand Z rail
         // Placement: Position=Vector (-357.9827053967083, -3.883478301096425, 274.9999999999999) Rotation=Rotation (-1.0956852193747107e-16, 6.986046963718845e-16, 1.0, -4.719597641614418e-31)
          color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, imported_alpha]) {  import("CR-10/Protal_frame_components/2040-L550-A0-1_2040-L550-B0-1.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / E_motor_bracket_X
@@ -658,49 +671,16 @@ translate([-392,285.5,0]){
          color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/V_Wheel_Component008/625pillow017.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / M5_Self-locking_nut006
         // Placement: Position=Vector (-6.539987571870853, 41.105822724970864, 118.02021583662372) Rotation=Rotation (2.0921941541824993e-28, 6.26008840837398e-30, -0.02614044349655795, 0.9996582802206979)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M5_Self-locking_nut006.stl");  }
+        color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M5_Self-locking_nut006.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / M5_Self-locking_nut007
         // Placement: Position=Vector (-67.13998757187085, 6.180278989624699, 118.62021583662373) Rotation=Rotation (4.185569176029832e-28, 7.888609052210111e-31, -9.860761315262639e-32, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M5_Self-locking_nut007.stl");  }
+        color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M5_Self-locking_nut007.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / M5_Self-locking_nut008
         // Placement: Position=Vector (-67.13998757187089, 77.18027898962468, 118.62021583662373) Rotation=Rotation (4.185569176029832e-28, 7.888609052210111e-31, -9.860761315262639e-32, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M5_Self-locking_nut008.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / 40-42_motor001
-        // Placement: Position=Vector (-82.53998757187092, 41.1802789896247, 145.40021583662374) Rotation=Rotation (4.185569176029832e-28, 7.888609052210111e-31, -9.860761315262639e-32, 1.0)
-         color([0.800000011920929, 0.800000011920929, 0.800000011920929, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/40-42_motor001.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / E_housing
-        // Placement: Position=Vector (-10.318549990195606, 88.2533808135573, 46.23278387742678) Rotation=Rotation (-0.6934926137579025, -0.13808690981853708, -0.13808690981853708, 0.6934926137579024)
-         color([0.7921568751335144, 0.8196078538894653, 0.7921568751335144, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/E_housing.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / M3X10_Pan_Head_Screw
-        // Placement: Position=Vector (8.460012428129104, 90.87671097426472, 104.50021583662372) Rotation=Rotation (2.954066258541137e-28, 2.9652224364510317e-28, -0.7071067811865475, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M3X10_Pan_Head_Screw.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / M3X10_Pan_Head_Screw001
-        // Placement: Position=Vector (8.460012428129104, 90.87671097426467, 73.5002158366237) Rotation=Rotation (2.954066258541137e-28, 2.9652224364510317e-28, -0.7071067811865475, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M3X10_Pan_Head_Screw001.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / M3X10_Flush_Head_Screw
-        // Placement: Position=Vector (-22.539987571870867, 89.22671097426468, 73.5002158366237) Rotation=Rotation (2.954066258541137e-28, 2.9652224364510317e-28, -0.7071067811865475, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M3X10_Flush_Head_Screw.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / E_idler_tensioner
-        // Placement: Position=Vector (-10.224898191455443, 88.2533808135573, 46.232783877426684) Rotation=Rotation (-0.6934926137579023, -0.1380869098185378, -0.1380869098185378, 0.6934926137579023)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/E_idler_tensioner.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / M3X18_Socket_Head_Screw
-        // Placement: Position=Vector (-22.53998757187081, 97.26671097426467, 104.50021583662367) Rotation=Rotation (2.954066258541137e-28, 2.9652224364510317e-28, -0.7071067811865475, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M3X18_Socket_Head_Screw.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / 624U_pillow
-        // Placement: Position=Vector (-82.46748757187095, 41.70027898962472, 145.38256583662374) Rotation=Rotation (4.185569176029832e-28, 7.888609052210111e-31, -9.860761315262639e-32, 1.0)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/624U_pillow.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / z_nut
-        // Placement: Position=Vector (43.66007031413921, 258.73314295886473, -61.749784163376425) Rotation=Rotation (0.5, 0.5000000000000001, -0.5, 0.5)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/z_nut.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / M4_Split_Washer
-        // Placement: Position=Vector (-7.96748757187088, 96.22671097426475, 100.9525658366237) Rotation=Rotation (4.185569176029832e-28, 7.888609052210111e-31, -9.860761315262639e-32, 1.0)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M4_Split_Washer.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / M4X8_Socket_Head_Screw
-        // Placement: Position=Vector (-7.96748757187088, 97.22671097426475, 100.9525658366237) Rotation=Rotation (2.954066258541137e-28, 2.9652224364510317e-28, -0.7071067811865475, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M4X8_Socket_Head_Screw.stl");  }
+        color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M5_Self-locking_nut008.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / M4_Split_Washer001
         // Placement: Position=Vector (-52.53998757187084, 41.6802789896247, 149.20021583662373) Rotation=Rotation (-0.5, -0.4999999999999999, 0.5, 0.5000000000000001)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M4_Split_Washer001.stl");  }
+        color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M4_Split_Washer001.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / M4_Split_Washer002
         // Placement: Position=Vector (-26.539987571870817, 41.68027898962471, 148.20021583662373) Rotation=Rotation (0.6935821135122184, 0.13763666595760096, 0.1376366659576008, 0.6935821135122183)
          color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M4_Split_Washer002.stl");  }
@@ -725,15 +705,6 @@ translate([-392,285.5,0]){
         // CR-10 / Protal_frame_components / Motor_holder_components / limit_switch001
         // Placement: Position=Vector (-68.48998757187086, 41.6802789896247, 172.1002158366238) Rotation=Rotation (1.3877787807815233e-17, -2.220446049254497e-16, 1.0, 3.0814879110248555e-33)
          color([0.800000011920929, 0.800000011920929, 0.800000011920929, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/limit_switch001.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / E_gear
-        // Placement: Position=Vector (-82.53998757187092, 147.1531429589047, 32.60021583662366) Rotation=Rotation (1.0, 1.816882007248995e-16, -6.591949208711917e-17, -1.4052208045102608e-16)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/E_gear.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / Extrusion_Spring
-        // Placement: Position=Vector (-17.698726110732423, 94.75421097426498, 74.1492158366234) Rotation=Rotation (2.960341608615453e-28, 0.7071067811865475, 2.958947086376716e-28, 0.7071067811865476)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/Extrusion_Spring.stl");  }
-        // CR-10 / Protal_frame_components / Motor_holder_components / M6_Pneumatic_joint
-        // Placement: Position=Vector (200.99855541442935, 151.85176886027503, -96.4732161479768) Rotation=Rotation (4.185569176029832e-28, 7.888609052210111e-31, -9.860761315262639e-32, 1.0)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/M6_Pneumatic_joint.stl");  }
         // CR-10 / Protal_frame_components / Motor_holder_components / 40-42_motor002
         // Placement: Position=Vector (-7.039987571870965, 98.08027898962511, 107.6737838519834) Rotation=Rotation (1.4458719875554528e-16, 0.7071067811865476, 0.7071067811865475, 1.3999205938088893e-16)
          color([0.800000011920929, 0.800000011920929, 0.800000011920929, imported_alpha]) {  import("CR-10/Protal_frame_components/Motor_holder_components/40-42_motor002.stl");  }
@@ -779,119 +750,9 @@ translate([-392,285.5,0]){
         // Placement: Position=Vector (-387.9827053967083, -3.883478301096921, 265.0000000000002) Rotation=Rotation (0.7071067811865476, -3.852884743950385e-16, 0.7071067811865475, -5.177650068795215e-16)
          color([0.6000000238418579, 0.6000000238418579, 0.6000000238418579, imported_alpha]) {  import("CR-10/Protal_frame_components/2020-L400-A0-1.stl");  }
         // CR-10 / Protal_frame_components / 2020-L415-A0-1_2020-L415-B0-1
+        // X-axis / hotend carriage rail
         // Placement: Position=Vector (10.717294603288241, -30.633478301094858, 576.4134913604943) Rotation=Rotation (0.49999999999999956, -0.5000000000000002, -0.4999999999999999, 0.5000000000000004)
          color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, imported_alpha]) {  import("CR-10/Protal_frame_components/2020-L415-A0-1_2020-L415-B0-1.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / E_plate
-        // Placement: Position=Vector (-21.976423313125437, 0.20223702435417934, 70.45000000000009) Rotation=Rotation (4.1827249595929915e-28, 4.535950205020814e-30, -2.761013168273539e-30, 1.0)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/E_plate.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / M5X30_Pan_Head_Screw006
-        // Placement: Position=Vector (-1.9764233131254194, 20.30223702435424, 75.70000000000009) Rotation=Rotation (2.9771564941087478e-28, 0.7071067811865475, 2.9381098714241164e-28, 0.7071067811865476)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/M5X30_Pan_Head_Screw006.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / M5X30_Pan_Head_Screw007
-        // Placement: Position=Vector (-21.401967048471636, -20.29776297564578, 48.350000000000044) Rotation=Rotation (2.9381098714241164e-28, -0.7071067811865475, -2.9771564941087478e-28, 0.7071067811865476)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/M5X30_Pan_Head_Screw007.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / M5X30_Pan_Head_Screw008
-        // Placement: Position=Vector (-41.97642331312545, 20.30223702435424, 75.70000000000009) Rotation=Rotation (2.9771564941087478e-28, 0.7071067811865475, 2.9381098714241164e-28, 0.7071067811865476)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/M5X30_Pan_Head_Screw008.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / M5_washer013
-        // Placement: Position=Vector (-21.401967048471636, -20.29776297564578, 72.95000000000009) Rotation=Rotation (4.1827249595929915e-28, 4.535950205020814e-30, -2.761013168273539e-30, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/M5_washer013.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / Eccentric_column004
-        // Placement: Position=Vector (-21.97642331312533, -19.897762975645776, 62.15000000000007) Rotation=Rotation (-9.646455863171065e-29, -1.8599366748696442e-28, 0.8864052604279198, -0.46291004988627305)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/Eccentric_column004.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / Spacers_for_rollers008
-        // Placement: Position=Vector (-1.9764233131254194, 20.30223702435424, 62.10000000000007) Rotation=Rotation (4.1827249595929915e-28, 4.535950205020814e-30, -2.761013168273539e-30, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/Spacers_for_rollers008.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / Spacers_for_rollers009
-        // Placement: Position=Vector (-41.97642331312545, 20.302237024354298, 62.10000000000008) Rotation=Rotation (4.1827249595929915e-28, 4.535950205020814e-30, -2.761013168273539e-30, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/Spacers_for_rollers009.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component009 / Rollers009
-        // Placement: Position=Vector (1.8310818404680824, 31.527974926482962, 37.55) Rotation=Rotation (4.930380657631324e-32, 2.5880274636669768e-31, 6.162975822039152e-31, 1.0)
-         color([0.800000011920929, 0.800000011920929, 0.800000011920929, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component009/Rollers009.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component009 / M5_washer014
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 23.6) Rotation=Rotation (4.930380657631324e-32, 2.5880274636669768e-31, 6.162975822039152e-31, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component009/M5_washer014.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component009 / 625pillow018
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 21.1) Rotation=Rotation (4.706512555736831e-31, -0.7071067811865475, 4.009251436368412e-31, 0.7071067811865476)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component009/625pillow018.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component009 / 625pillow019
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 27.100000000000005) Rotation=Rotation (3.9252311467093966e-17, 0.7071067811865475, -3.925231146709389e-17, 0.7071067811865476)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component009/625pillow019.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component010 / Rollers010
-        // Placement: Position=Vector (1.8310818404680824, 31.527974926482962, 37.55) Rotation=Rotation (4.930380657631324e-32, 2.5880274636669768e-31, 6.162975822039152e-31, 1.0)
-         color([0.800000011920929, 0.800000011920929, 0.800000011920929, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component010/Rollers010.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component010 / M5_washer015
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 23.6) Rotation=Rotation (4.930380657631324e-32, 2.5880274636669768e-31, 6.162975822039152e-31, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component010/M5_washer015.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component010 / 625pillow020
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 21.1) Rotation=Rotation (4.706512555736831e-31, -0.7071067811865475, 4.009251436368412e-31, 0.7071067811865476)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component010/625pillow020.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component010 / 625pillow021
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 27.100000000000005) Rotation=Rotation (3.9252311467093966e-17, 0.7071067811865475, -3.925231146709389e-17, 0.7071067811865476)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component010/625pillow021.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component011 / Rollers011
-        // Placement: Position=Vector (1.8310818404680824, 31.527974926482962, 37.55) Rotation=Rotation (4.930380657631324e-32, 2.5880274636669768e-31, 6.162975822039152e-31, 1.0)
-         color([0.800000011920929, 0.800000011920929, 0.800000011920929, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component011/Rollers011.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component011 / M5_washer016
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 23.6) Rotation=Rotation (4.930380657631324e-32, 2.5880274636669768e-31, 6.162975822039152e-31, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component011/M5_washer016.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component011 / 625pillow022
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 21.1) Rotation=Rotation (4.706512555736831e-31, -0.7071067811865475, 4.009251436368412e-31, 0.7071067811865476)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component011/625pillow022.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / V_Wheel_Component011 / 625pillow023
-        // Placement: Position=Vector (17.331081840468094, -3.972025073517127, 27.100000000000005) Rotation=Rotation (3.9252311467093966e-17, 0.7071067811865475, -3.925231146709389e-17, 0.7071067811865476)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/V_Wheel_Component011/625pillow023.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / M5_Self-locking_nut009
-        // Placement: Position=Vector (-21.401967048471636, -20.29776297564578, 77.07000000000008) Rotation=Rotation (4.1827249595929915e-28, 4.535950205020814e-30, -2.761013168273539e-30, 1.0)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/M5_Self-locking_nut009.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / M5_Self-locking_nut010
-        // Placement: Position=Vector (-1.9764233131254194, 20.302237024354245, 47.580000000000055) Rotation=Rotation (-0.19528438065156636, 0.9807466597819918, 2.054083366135123e-28, 4.0297250796762914e-29)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/M5_Self-locking_nut010.stl");  }
-        // CR-10 / Protal_frame_components / Slider_Component / M5_Self-locking_nut011
-        // Placement: Position=Vector (-41.976423313125345, 20.302237024354234, 47.580000000000055) Rotation=Rotation (-0.19528438065156636, 0.9807466597819918, 2.054083366135123e-28, 4.0297250796762914e-29)
-         color([0.4901960790157318, 0.4901960790157318, 0.4901960790157318, imported_alpha]) {  import("CR-10/Protal_frame_components/Slider_Component/M5_Self-locking_nut011.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / Fan_cover
-        // Placement: Position=Vector (-7.255629865861035, -5.663741792513887, 34.500000000000085) Rotation=Rotation (-4.182711889880785e-28, -6.705317694378595e-30, 1.5777218104420222e-30, 1.0)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/Fan_cover.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / Nozzle_fan
-        // Placement: Position=Vector (-17.581836115705627, -113.0554527549639, 17.897354417091535) Rotation=Rotation (0.6272113751262429, 0.627211375126243, 0.3265055756219903, 0.3265055756219903)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/Nozzle_fan.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M3X10_Pan_Head_Screw004
-        // Placement: Position=Vector (-24.75562986586245, 11.136258207436136, 47.149999999999864) Rotation=Rotation (-0.7045280919118175, 0.06033380235898954, 0.7045280919118175, 0.06033380235898954)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M3X10_Pan_Head_Screw004.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M3X10_Pan_Head_Screw005
-        // Placement: Position=Vector (-24.755629865862446, -20.863741792513885, 47.149999999999864) Rotation=Rotation (0.1234690975775537, 0.6962437661791915, -0.1234690975775537, 0.6962437661791914)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M3X10_Pan_Head_Screw005.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M3X10_Pan_Head_Screw006
-        // Placement: Position=Vector (7.244370134138924, 11.136258207436136, 47.149999999999864) Rotation=Rotation (0.004063890299616056, 0.7070951030771128, -0.004063890299616056, 0.7070951030771128)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M3X10_Pan_Head_Screw006.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M3X10_Pan_Head_Screw007
-        // Placement: Position=Vector (7.244370134138923, -20.86374179251391, 47.149999999999864) Rotation=Rotation (0.7061776214247585, 0.03623764615521479, -0.7061776214247584, 0.03623764615521479)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M3X10_Pan_Head_Screw007.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M3X6Pan_Head_Screw014
-        // Placement: Position=Vector (1.7443701341389728, 22.336258207486082, 74.05000000000008) Rotation=Rotation (-2.946467763174408e-28, -0.7071067811865475, 2.9687801189941974e-28, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M3X6Pan_Head_Screw014.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M3X6Pan_Head_Screw015
-        // Placement: Position=Vector (19.244370134138933, 3.436258207486109, 74.0500000000001) Rotation=Rotation (-2.946467763174408e-28, -0.7071067811865475, 2.9687801189941974e-28, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M3X6Pan_Head_Screw015.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / Cold_section_fan
-        // Placement: Position=Vector (209.46659235636156, 59.836258207400626, -132.77777777780662) Rotation=Rotation (6.414802298189457e-30, 0.7071067811865478, 0.7071067811865472, -3.0679489252210398e-30)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/Cold_section_fan.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / Nozzle_fan_duct
-        // Placement: Position=Vector (-35.94451875474969, -24.263741792513866, 57.0000000000001) Rotation=Rotation (-0.5, -0.5, -0.5, 0.5)
-         color([1.0, 0.6000000238418579, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/Nozzle_fan_duct.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M2X8_Socket_Head_Screw
-        // Placement: Position=Vector (-34.64451875474972, 13.336258207486186, 39.50000000000009) Rotation=Rotation (-4.182711889880785e-28, -6.705317694378595e-30, 1.5777218104420222e-30, 1.0)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M2X8_Socket_Head_Screw.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M2X8_Socket_Head_Screw001
-        // Placement: Position=Vector (-34.64451875474972, 13.336258207486129, 74.50000000000013) Rotation=Rotation (-4.182711889880785e-28, -6.705317694378595e-30, 1.5777218104420222e-30, 1.0)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M2X8_Socket_Head_Screw001.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M2X10_Socket_Head_Screw
-        // Placement: Position=Vector (-37.444518754749524, -21.663741792514124, 39.50000000000012) Rotation=Rotation (-4.182711889880785e-28, -6.705317694378595e-30, 1.5777218104420222e-30, 1.0)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M2X10_Socket_Head_Screw.stl");  }
-        // CR-10 / Protal_frame_components / Fan_assembly / M2X10_Socket_Head_Screw001
-        // Placement: Position=Vector (-37.444518754749744, -21.663741792513903, 74.50000000000011) Rotation=Rotation (-4.182711889880785e-28, -6.705317694378595e-30, 1.5777218104420222e-30, 1.0)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Protal_frame_components/Fan_assembly/M2X10_Socket_Head_Screw001.stl");  }
         // CR-10 / Protal_frame_components / Z_Stent_Components / Z_Stent_Z_______0
         // Placement: Position=Vector (-190.79665133133238, -69.58092717502768, 60.15040372098498) Rotation=Rotation (-4.178430132737123e-28, -1.9721522630525295e-31, -1.1832913578315167e-30, 1.0)
          color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, imported_alpha]) {  import("CR-10/Protal_frame_components/Z_Stent_Components/Z_Stent_Z_______0.stl");  }
@@ -1057,56 +918,5 @@ translate([-392,285.5,0]){
         // CR-10 / M3X6Pan_Head_Screw017
         // Placement: Position=Vector (14.020170808731136, -49.33355101130952, 395.06834649129297) Rotation=Rotation (6.97261119368419e-32, 0.7071067811865468, 7.888163687698918e-16, 0.7071067811865482)
          color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/M3X6Pan_Head_Screw017.stl");  }
-        // CR-10 / Sprinkler_assembly / Radiator
-        // Placement: Position=Vector (0.32367465813739477, 1.0221304993813796, 17.89999999999997) Rotation=Rotation (-7.651950780643815e-29, 9.227059340102591e-32, -4.733165431326071e-30, 1.0)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/Radiator.stl");  }
-        // CR-10 / Sprinkler_assembly / Catheter
-        // Placement: Position=Vector (119.70652697085855, 16.788152211477335, 167.54999999999995) Rotation=Rotation (0.9919591883817219, -0.12655816285437957, -4.422255091828516e-17, 3.6310424064482385e-17)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/Catheter.stl");  }
-        // CR-10 / Sprinkler_assembly / Heat_block
-        // Placement: Position=Vector (4.323674658137398, 1.0221304993814906, 56.699999999999974) Rotation=Rotation (0.7071067811865475, 0.7071067811865476, -1.0554099085705222e-16, -5.611855875574564e-18)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/Heat_block.stl");  }
-        // CR-10 / Sprinkler_assembly / nozzle
-        // Placement: Position=Vector (0.3236746581373948, 1.0221304993814908, 56.699999999999974) Rotation=Rotation (-1.6230732602722008e-17, 1.1856834017897697e-17, -0.8307798069485305, 0.5566012148446701)
-         color([0.7921568751335144, 0.8196078538894653, 0.7921568751335144, imported_alpha]) {  import("CR-10/Sprinkler_assembly/nozzle.stl");  }
-        // CR-10 / Sprinkler_assembly / M3_Screw
-        // Placement: Position=Vector (6.323674658137393, 1.0221304993814906, 39.69999999999996) Rotation=Rotation (-5.404221770069139e-29, 5.417270802528734e-29, 0.7071067811865475, 0.7071067811865476)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3_Screw.stl");  }
-        // CR-10 / Sprinkler_assembly / Heater
-        // Placement: Position=Vector (9.823674658137396, -8.97786950061863, 51.69999999999997) Rotation=Rotation (-0.7071067811865476, -3.412098535266386e-30, 3.2816082106704435e-30, 0.7071067811865475)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Sprinkler_assembly/Heater.stl");  }
-        // CR-10 / Sprinkler_assembly / Nozzle_thermistor
-        // Placement: Position=Vector (2.82367465813739, -6.9778695006185165, 54.69999999999997) Rotation=Rotation (0.7071067811865448, -1.639983276352603e-15, -7.5440772314015045e-16, 0.7071067811865502)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/Nozzle_thermistor.stl");  }
-        // CR-10 / Sprinkler_assembly / M3X4_Screw
-        // Placement: Position=Vector (2.8236746581373975, -5.977869500618515, 51.20000000000001) Rotation=Rotation (-0.0377602185474437, 8.215928680105714e-17, 0.999286828640931, 3.0879950937516053e-17)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3X4_Screw.stl");  }
-        // CR-10 / Sprinkler_assembly / Pneumatic_joint
-        // Placement: Position=Vector (0.32367465813739477, 1.0221304993814906, 8.399999999999963) Rotation=Rotation (-7.651950780643815e-29, 9.227059340102591e-32, -4.733165431326071e-30, 1.0)
-         color([0.9450980424880981, 0.9450980424880981, 0.9450980424880981, imported_alpha]) {  import("CR-10/Sprinkler_assembly/Pneumatic_joint.stl");  }
-        // CR-10 / Sprinkler_assembly / D4_Teflon_tube
-        // Placement: Position=Vector (0.3236746581373948, 1.0221304993813796, 46.69999999999996) Rotation=Rotation (-0.5473717388385662, 0.44764291519116484, -0.44764291519116484, 0.5473717388385663)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/D4_Teflon_tube.stl");  }
-        // CR-10 / Sprinkler_assembly / M3__18_Flush_Head_Screw
-        // Placement: Position=Vector (-1.1763253418626063, -5.977869500618516, 38.69999999999996) Rotation=Rotation (-8.51829675935717e-17, 0.7071067811865476, -9.99291349814266e-17, 0.7071067811865475)
-         color([0.7764706015586853, 0.7568627595901489, 0.7764706015586853, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3__18_Flush_Head_Screw.stl");  }
-        // CR-10 / Sprinkler_assembly / M3__18_Flush_Head_Screw001
-        // Placement: Position=Vector (-1.1763253418626136, 8.022130499381497, 38.69999999999996) Rotation=Rotation (-8.51829675935717e-17, 0.7071067811865476, -9.99291349814266e-17, 0.7071067811865475)
-         color([0.7764706015586853, 0.7568627595901489, 0.7764706015586853, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3__18_Flush_Head_Screw001.stl");  }
-        // CR-10 / Sprinkler_assembly / M3_Split_Washer004
-        // Placement: Position=Vector (6.323674658137393, 8.022130499381387, 17.899999999999917) Rotation=Rotation (-5.417270802528734e-29, -5.404221770069139e-29, -0.7071067811865475, 0.7071067811865476)
-         color([1.0, 0.6000000238418579, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3_Split_Washer004.stl");  }
-        // CR-10 / Sprinkler_assembly / M3_Split_Washer005
-        // Placement: Position=Vector (6.323674658137393, -5.977869500618627, 17.89999999999997) Rotation=Rotation (-5.417270802528734e-29, -5.404221770069139e-29, -0.7071067811865475, 0.7071067811865476)
-         color([1.0, 0.6000000238418579, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3_Split_Washer005.stl");  }
-        // CR-10 / Sprinkler_assembly / M3X16_Pan_Head_Screw002
-        // Placement: Position=Vector (8.973674658137393, 8.022130499381387, 17.899999999999917) Rotation=Rotation (9.227059340102591e-32, 7.651950780643815e-29, 1.0, 4.733165431326071e-30)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3X16_Pan_Head_Screw002.stl");  }
-        // CR-10 / Sprinkler_assembly / M3X16_Pan_Head_Screw003
-        // Placement: Position=Vector (8.973674658137393, -5.977869500618628, 17.89999999999997) Rotation=Rotation (3.864702268430888e-30, -0.6627664198441737, 0.7488261966083561, -2.7749974584797154e-30)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3X16_Pan_Head_Screw003.stl");  }
-        // CR-10 / Sprinkler_assembly / M3_Screw001
-        // Placement: Position=Vector (9.823674658137394, 1.0221304993814906, 56.699999999999974) Rotation=Rotation (-0.49025556607458043, -0.5095581222322854, 0.5095581222322855, 0.49025556607458043)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Sprinkler_assembly/M3_Screw001.stl");  }
     }
 }
