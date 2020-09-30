@@ -1,4 +1,3 @@
-use <components/camera_mount.scad>
 use <components/rpi_case.scad>
 use <cr10s_z_drive.scad>
 use <cr10s_factory_extruder.scad>
@@ -7,6 +6,8 @@ use <cr10s_factory_hotend.scad>
 use <cr10s_factory_hotend_carriage.scad>
 use <cr10s_factory_hotend_carriage_supports.scad>
 use <components/microswiss_drive.scad>
+use <components/carriage_cable_chain_bracket.scad>
+use <components/gantry_brackets.scad>
 
 // set alpha of imported STL objects, from original CR-10 model
 imported_alpha = 0.5;
@@ -24,11 +25,7 @@ show_control_box = false;
 show_slide_plate_assembly = true;
 
 color("red"){
-    if(have_camera_mount == true) {
-        translate([-5.5,283,295.75]){
-            camera_mount(-76,10);
-        }
-    }
+    gantry_brackets(have_camera_mount, have_x_cable_management);
     if(have_pi_case == true) {
         translate([3.5,164,-1.5]){
             rpi_case();
@@ -47,16 +44,11 @@ color("red"){
                 import("../backup/cr10/Creality_CR-10_Z_axis_cable_drag_chain_thingiverse_2757810/files/combo_YZ_bracket.stl");
             }
         }
-        translate([-43,281,227]){
-            rotate([90,0,90]){
-                import("../backup/cr10/Creality_CR-10_X_axis_cable_drag_chain_thingiverse_2923095/files/vert_combo_bracket_-40m_v3.stl");
-            }
-        }
     }
     if(have_x_cable_management == true) {
         translate([212,250,290]){
             rotate([90,0,90]){
-                import("../backup/cr10/Creality_CR-10_X_axis_cable_drag_chain_thingiverse_2923095/files/x_bracket_v11.stl");
+                carriage_cable_chain_bracket();
             }
         }
     }
