@@ -13,7 +13,7 @@ use <components/gantry_brackets.scad>
 imported_alpha = 0.5;
 
 // options / accessories
-have_camera_mount = false;
+have_camera_mount = true;
 have_pi_case = false;
 have_microswiss = true;
 have_z_cable_management = true;
