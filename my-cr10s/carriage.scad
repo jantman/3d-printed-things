@@ -15,7 +15,7 @@ imported_alpha = 0.5;
 // options / accessories
 have_camera_mount = false;
 have_pi_case = false;
-have_microswiss = false;
+have_microswiss = true;
 have_z_cable_management = true;
 have_y_cable_management = true;
 have_x_cable_management = true;
