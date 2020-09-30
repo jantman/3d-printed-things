@@ -2,14 +2,16 @@ use <components/camera_mount.scad>
 use <components/rpi_case.scad>
 use <cr10s_z_drive.scad>
 use <cr10s_factory_extruder.scad>
-use <cr10s_factory_hotend_carriage.scad>
 use <cr10s_factory_fan_assembly.scad>
 use <cr10s_factory_hotend.scad>
+use <cr10s_factory_hotend_carriage.scad>
+use <cr10s_factory_hotend_carriage_supports.scad>
+use <components/microswiss_drive.scad>
 
 imported_alpha = 0.5;
 have_camera_mount = true;
 have_pi_case = true;
-have_microswiss = false;
+have_microswiss = true;
 
 color("red"){
     if(have_camera_mount) {
@@ -21,6 +23,11 @@ color("red"){
         translate([3.5,164,-1.5]){
             rpi_case();
         }
+    }
+}
+if(have_microswiss == true) {
+    translate([138,247,260]){
+        microswiss_drive(imported_alpha);
     }
 }
 // carriage/bracket for second Z drive
@@ -42,6 +49,7 @@ translate([-392,285.5,0]){
         if(have_microswiss == false) {
             cr10s_factory_extruder(imported_alpha);
             cr10s_factory_hotend_carriage(imported_alpha);
+            cr10s_factory_hotend_carriage_supports(imported_alpha);
             cr10s_factory_fan_assembly(imported_alpha);
             cr10s_factory_hotend(imported_alpha);
         }

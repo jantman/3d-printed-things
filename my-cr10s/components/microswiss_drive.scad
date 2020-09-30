@@ -1,7 +1,7 @@
-use <cr10s_factory_fan_assembly.scad>
-use <cr10s_factory_hotend.scad>
-use <cr10s_factory_hotend_carriage.scad>
-use <cr10s_factory_hotend_carriage_supports.scad>
+use <../cr10s_factory_fan_assembly.scad>
+use <../cr10s_factory_hotend.scad>
+use <../cr10s_factory_hotend_carriage.scad>
+use <../cr10s_factory_hotend_carriage_supports.scad>
 
 module microswiss_drive(imported_alpha = 1.0) {
   translate([-84.5,0,-2.35]){
