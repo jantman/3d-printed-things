@@ -46,8 +46,8 @@ color("red"){
         }
     }
     if(have_x_cable_management == true) {
-        translate([212,250,290]){
-            rotate([90,0,90]){
+        translate([139,254.75,290]){
+            rotate([0,0,0]){
                 carriage_cable_chain_bracket();
             }
         }
