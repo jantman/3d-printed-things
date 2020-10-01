@@ -87,4 +87,4 @@ EOF
 done
 
 echo "FAILED STL FILES:"
-echo $failed
+echo -e $failed
