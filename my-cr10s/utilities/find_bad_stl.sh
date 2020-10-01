@@ -1,5 +1,6 @@
 #!/bin/bash
 # This optionally depends on admesh: https://github.com/admesh/admesh/
+# if you want your STL files to be automatically fixed (as well as admesh can)
 
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
@@ -23,7 +24,60 @@ for i in **/*.stl; do # Whitespace-safe and recursive
       echo "Checking $i (binary)"
       [ "$ADMESH_BIN" != "" ] && admesh --write-binary-stl=$fpath $fpath
     fi
-    echo -e "import(\"${fpath}\");\n" > $scadfile
+    # NOTE: Most OpenSCAD render-time issues that I've seen are likely caused by bugs/missing features
+    # for handling co-incident faces, or because OpenSCAD silently imports "bad" STL. E.g. see
+    # https://github.com/openscad/openscad/issues/791 https://github.com/openscad/openscad/issues/2847 etc.
+    # The IMPORTANT part is that these issuses don't show up in preview, and also don't show up in standalone
+    # usage of the STL file, or with simple operations. HOWEVER, they *do* show up when 3D operations such as
+    # union/intersection/difference are performed, because that's when CGAL compilation comes into play.
+    #
+    # The following example SCAD file attempts some 3D CGAL operations on the STL file to see if they fail.
+    # This can be a good way of finding bad STL files.
+    #
+    # It's still entirely possible, and likely, to trigger the conicident faces bug ourselves in code that we write,
+    # but that's our own problem to solve.
+    cat <<EOF > $scadfile
+translate([-392,285.5,0]){
+    rotate([-90,0,-90]){
+        color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, 0.5]) {
+            import("${fpath}");
+        }
+    }
+}
+union() {
+    translate([-392,285.5,0]){
+        rotate([-90,0,-90]){
+            color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, 0.5]) {
+                import("${fpath}");
+            }
+        }
+    }
+    cube([20,20,20],false);
+}
+intersection() {
+    translate([-392,285.5,0]){
+        rotate([-90,0,-90]){
+            color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, 0.5]) {
+                import("${fpath}");
+            }
+        }
+    }
+    cube([20,20,20],false);
+}
+difference() {
+    translate([-392,285.5,0]){
+        rotate([-90,0,-90]){
+            color([0.2862745225429535, 0.6627451181411743, 0.2862745225429535, 0.5]) {
+                import("${fpath}");
+            }
+        }
+    }
+    cube([20,20,20],false);
+}
+EOF
+    echo ">>> ${scadfile}:"
+    cat $scadfile
+    echo "EXECUTE: openscad --hardwarnings -o $outfile $scadfile"
     if ! openscad --hardwarnings -o $outfile $scadfile
     then
       echo "FAILED: ${i}"
@@ -34,17 +88,3 @@ done
 
 echo "FAILED STL FILES:"
 echo $failed
-
-#set -x
-#openscad --hardwarnings -o $outfile -D'show_control_box=false' -D'show_printer=true' CR-10.STEP.scad || exit 1
-#openscad --hardwarnings -o $outfile -D'show_control_box=true' -D'show_printer=false' CR-10.STEP.scad || exit 1
-#have_camera_mount = false;
-#have_pi_case = false;
-#have_microswiss = false;
-#have_z_cable_management = false;
-#have_y_cable_management = false;
-#have_x_cable_management = false;
-#show_control_box = false;
-#show_printer = true;
-#show_slide_plate_assembly = true;
-#exit 0
