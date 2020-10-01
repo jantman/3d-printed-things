@@ -4,9 +4,9 @@ This directory contains complete 3D models of my Creality CR-10S printer, as equ
 
 ## Contents
 
+* [CR-10.STEP.scad](CR-10.STEP.scad) - OpenSCAD file of my CR-10S, using the below resources
 * [Creality_CR-10/](Creality_CR-10/) - git submodule pulling in Creality's [CR-10 open-source hardware drawings](https://github.com/Creality3DPrinting/CR-10), licensed under GPLv3.
 * [CR-10/](CR-10/) - STL files from the Creality model, exported using my [step-to-objects-stl.py](../README.md#step-to-stl-to-scad-conversion) script and utilized by ``CR-10.STEP.scad``
-* [CR-10.STEP.scad](CR-10.STEP.scad) - OpenSCAD file of my CR-10S, using the above resources
 
 ## Sources and Acknowledgements
 
