@@ -15,8 +15,8 @@ have_x_cable_management = true;
 // show or hide assemblies
 show_control_box_shell = true;
 show_control_box_details = true;
-show_spool_holder = false;
-show_printer = false;
+show_spool_holder = true;
+show_printer = true;
 show_slide_plate_assembly = true;
 
 if(show_control_box_shell == true){
