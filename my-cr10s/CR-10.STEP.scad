@@ -13,14 +13,21 @@ have_y_cable_management = true;
 have_x_cable_management = true;
 
 // show or hide assemblies
-show_control_box = false;
+show_control_box_shell = true;
+show_control_box_details = true;
 show_spool_holder = false;
-show_printer = true;
+show_printer = false;
 show_slide_plate_assembly = true;
 
-if(show_control_box == true){
+if(show_control_box_shell == true){
     translate([-392,285.5,0]){
-        cr10s_control_box(imported_alpha);
+        cr10s_control_box_shell(imported_alpha);
+    }
+}
+
+if(show_control_box_details == true){
+    translate([-392,285.5,0]){
+        cr10s_control_box_details(imported_alpha);
     }
 }
 
