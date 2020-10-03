@@ -21,3 +21,16 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 3. Generates a ``.scad`` file with ``import()`` statements for every one of the STL files. If color information (DiffuseColor) was present on the part, that is preserved in the SCAD file by wrapping the ``import()`` statement with ``color()``.
 
 The resulting SCAD file should allow you to work with each part that was present in the original STEP independently in OpenSCAD, i.e. moving parts around, hiding them, swapping them out for different parts, etc.
+
+## Identifying bad STL files
+
+[find_bad_stl.py](find_bad_stl.py) is a Python script to aid in identifying problematic STL files. It either takes a list of STL file paths, or finds all STL files under the current directory, recursively. For each file it:
+
+1. If the [admesh](https://github.com/admesh/admesh/) binary can be found, it first rewrites the STL file with that program, fixing all problems that admesh can fix.
+2. loads the mesh from the STL file in Python, and finds the bounding box (min and max x, y, z) for the object.
+3. generates a SCAD file that ``import``s the STL four times; once as-is with colors, rotation, and translation applied, once unioned with a cube, once differenced with a cube, and once intersected with a cube.
+4. runs ``openscad`` on this generated file, in command-line STL export mode.
+
+The union/difference/intersection with a cube causes OpenSCAD to have CGAL compile the object. Any STL files which caused OpenSCAD to fail (exit non-zero) during the attempted union/difference/intersection operations or rendering to STL, are appended to a "failed" list and output at the end of the run.
+
+This script is extremely helpful if you have a SCAD file that imports many, many STLs and won't render.
