@@ -15,12 +15,12 @@ use <cr10s_printer.scad>
 imported_alpha = 0.5;
 
 // options / accessories
-have_camera_mount = false;
-have_pi_case = false;
-have_microswiss = false;
-have_z_cable_management = false;
-have_y_cable_management = false;
-have_x_cable_management = false;
+have_camera_mount = true;
+have_pi_case = true;
+have_microswiss = true;
+have_z_cable_management = true;
+have_y_cable_management = true;
+have_x_cable_management = true;
 
 // show or hide assemblies
 show_control_box = false;
