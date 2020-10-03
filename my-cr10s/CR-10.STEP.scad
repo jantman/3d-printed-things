@@ -1,13 +1,3 @@
-use <components/rpi_case.scad>
-use <cr10s_z_drive.scad>
-use <cr10s_factory_extruder.scad>
-use <cr10s_factory_fan_assembly.scad>
-use <cr10s_factory_hotend.scad>
-use <cr10s_factory_hotend_carriage.scad>
-use <cr10s_factory_hotend_carriage_supports.scad>
-use <components/microswiss_drive.scad>
-use <components/carriage_cable_chain_bracket.scad>
-use <components/gantry_brackets.scad>
 use <cr10s_control_box.scad>
 use <cr10s_printer.scad>
 
@@ -41,39 +31,5 @@ if(show_spool_holder == true){
 }
 
 if(show_printer == true){
-    color("red"){
-        gantry_brackets(have_camera_mount, have_x_cable_management);
-        if(have_pi_case == true) {
-            translate([3.5,164,-1.5]){
-                rpi_case();
-            }
-        }
-        if(have_y_cable_management == true) {
-            translate([35,352,22]){
-                rotate([0,0,-20]){
-                    import("../backup/cr10/Creality_CR-10_Y_axis_cable_drag_chain_thingiverse_2708420/files/bed_end_v4.stl");
-                }
-            }
-        }
-        if(have_z_cable_management == true) {
-            translate([-77,360,26]){
-                rotate([90,0,180]){
-                    import("../backup/cr10/Creality_CR-10_Z_axis_cable_drag_chain_thingiverse_2757810/files/combo_YZ_bracket.stl");
-                }
-            }
-        }
-        if(have_x_cable_management == true) {
-            translate([139,254.75,290]){
-                rotate([0,0,0]){
-                    carriage_cable_chain_bracket();
-                }
-            }
-        }
-    }
-    if(have_microswiss == true) {
-        translate([138,247,260]){
-            microswiss_drive(imported_alpha);
-        }
-    }
-    cr10s_printer(imported_alpha, show_slide_plate_assembly, have_camera_mount, have_microswiss);
+    cr10s_printer(imported_alpha, show_slide_plate_assembly, have_camera_mount, have_microswiss, have_x_cable_management, have_z_cable_management, have_y_cable_management, have_pi_case);
 }
