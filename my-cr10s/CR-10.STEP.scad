@@ -24,6 +24,7 @@ have_x_cable_management = true;
 
 // show or hide assemblies
 show_control_box = false;
+show_spool_holder = false;
 show_printer = true;
 show_slide_plate_assembly = true;
 
@@ -31,6 +32,12 @@ if(show_control_box == true){
     translate([-392,285.5,0]){
         cr10s_control_box(imported_alpha);
     }
+}
+
+if(show_spool_holder == true){
+  translate([-392,285.5,0]){
+      cr10s_control_box_spool_holder(imported_alpha);
+  }
 }
 
 if(show_printer == true){

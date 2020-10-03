@@ -1,11 +1,31 @@
+module cr10s_control_box_spool_holder(imported_alpha = 1.0){
+    rotate([-90,0,-90]){
+        // CR-10 / Controller_Box / Support_Frame
+        // Placement: Position=Vector (113.19031714344243, -354.8116688967468, 240.99999999999997) Rotation=Rotation (-4.332977403171068e-16, 1.0, 1.8319397256275118e-48, -4.227900483133874e-33)
+        color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/Support_Frame.stl");  }
+        // CR-10 / Controller_Box / M3X6_Hand_Twisted_Screw
+        // Placement: Position=Vector (66.19031714344212, -15.960848835846766, 237.8499999999999) Rotation=Rotation (2.2041502275597383e-17, -0.7071067811865475, -3.7302944847039356e-17, 0.7071067811865476)
+        color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/M3X6_Hand_Twisted_Screw.stl");  }
+        // CR-10 / Controller_Box / M3X6_Hand_Twisted_Screw001
+        // Placement: Position=Vector (66.19031714344212, -38.960848835846775, 237.84999999999994) Rotation=Rotation (2.2041502275597383e-17, -0.7071067811865475, -3.7302944847039356e-17, 0.7071067811865476)
+        color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/M3X6_Hand_Twisted_Screw001.stl");  }
+        // CR-10 / Controller_Box / M30_Plastic_nut
+        // Placement: Position=Vector (76.69031714344212, 56.74324751105337, 108.38205599349996) Rotation=Rotation (-0.21186746789117727, -0.21186746789117758, -0.6746200234571907, 0.6746200234571913)
+        color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Controller_Box/M30_Plastic_nut.stl");  }
+        // CR-10 / Controller_Box / M30_Plastic_nut001
+        // Placement: Position=Vector (-10.809682856557936, 56.74324751105327, 108.38205599349996) Rotation=Rotation (-9.580087905776352e-18, -6.892453502841301e-17, 0.7071067811865478, 0.7071067811865472)
+        color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Controller_Box/M30_Plastic_nut001.stl");  }
+        // CR-10 / Controller_Box / Support_tube
+        // Placement: Position=Vector (82.19031714344206, 56.74324751105331, 108.3820559935) Rotation=Rotation (0.5000000000000003, -0.5000000000000001, 0.5000000000000001, 0.4999999999999996)
+        color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Controller_Box/Support_tube.stl");  }
+    }
+}
+
 module cr10s_control_box(imported_alpha = 1.0){
     rotate([-90,0,-90]){
         // CR-10 / Controller_Box / Casing
         // Placement: Position=Vector (-59.80968285655787, 10.539151164153257, 240.99999999999994) Rotation=Rotation (4.1962860986182934e-17, -5.551115123125843e-17, -1.0791469532955683e-17, 1.0)
          color([0.7921568751335144, 0.8196078538894653, 0.7921568751335144, imported_alpha]) {  import("CR-10/Controller_Box/Casing.stl");  }
-        // CR-10 / Controller_Box / Support_Frame
-        // Placement: Position=Vector (113.19031714344243, -354.8116688967468, 240.99999999999997) Rotation=Rotation (-4.332977403171068e-16, 1.0, 1.8319397256275118e-48, -4.227900483133874e-33)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/Support_Frame.stl");  }
         // CR-10 / Controller_Box / Fan_holder
         // Placement: Position=Vector (-120.80968285655793, -11.960848835846734, 245.99999999999994) Rotation=Rotation (8.144854629422093e-16, 0.7071067811865477, 0.7071067811865474, -8.341116186757548e-16)
          color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/Fan_holder.stl");  }
@@ -81,21 +101,6 @@ module cr10s_control_box(imported_alpha = 1.0){
         // CR-10 / Controller_Box / M3X8_Pan_Head_Screw003
         // Placement: Position=Vector (-133.12369879966397, 54.489151164153164, 257.1571363129001) Rotation=Rotation (1.5406910557410803e-17, 0.9238795325112867, -8.47759086588614e-17, 0.38268343236508984)
          color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/M3X8_Pan_Head_Screw003.stl");  }
-        // CR-10 / Controller_Box / M3X6_Hand_Twisted_Screw
-        // Placement: Position=Vector (66.19031714344212, -15.960848835846766, 237.8499999999999) Rotation=Rotation (2.2041502275597383e-17, -0.7071067811865475, -3.7302944847039356e-17, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/M3X6_Hand_Twisted_Screw.stl");  }
-        // CR-10 / Controller_Box / M3X6_Hand_Twisted_Screw001
-        // Placement: Position=Vector (66.19031714344212, -38.960848835846775, 237.84999999999994) Rotation=Rotation (2.2041502275597383e-17, -0.7071067811865475, -3.7302944847039356e-17, 0.7071067811865476)
-         color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/M3X6_Hand_Twisted_Screw001.stl");  }
-        // CR-10 / Controller_Box / M30_Plastic_nut
-        // Placement: Position=Vector (76.69031714344212, 56.74324751105337, 108.38205599349996) Rotation=Rotation (-0.21186746789117727, -0.21186746789117758, -0.6746200234571907, 0.6746200234571913)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Controller_Box/M30_Plastic_nut.stl");  }
-        // CR-10 / Controller_Box / M30_Plastic_nut001
-        // Placement: Position=Vector (-10.809682856557936, 56.74324751105327, 108.38205599349996) Rotation=Rotation (-9.580087905776352e-18, -6.892453502841301e-17, 0.7071067811865478, 0.7071067811865472)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Controller_Box/M30_Plastic_nut001.stl");  }
-        // CR-10 / Controller_Box / Support_tube
-        // Placement: Position=Vector (82.19031714344206, 56.74324751105331, 108.3820559935) Rotation=Rotation (0.5000000000000003, -0.5000000000000001, 0.5000000000000001, 0.4999999999999996)
-         color([1.0, 1.0, 1.0, imported_alpha]) {  import("CR-10/Controller_Box/Support_tube.stl");  }
         // CR-10 / Controller_Box / M3X4_Pan_Head_Screw002
         // Placement: Position=Vector (-203.30968285655788, -45.46084883584677, 360.6499999999999) Rotation=Rotation (3.7302944847039356e-17, 0.7071067811865476, 2.2041502275597383e-17, 0.7071067811865475)
          color([0.5921568870544434, 0.6666666865348816, 0.5921568870544434, imported_alpha]) {  import("CR-10/Controller_Box/M3X4_Pan_Head_Screw002.stl");  }
