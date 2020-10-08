@@ -1,0 +1,8 @@
+cssselect2==0.3.0
+lxml==4.5.2
+Pillow==7.2.0
+reportlab==3.5.53
+svglib==1.0.1
+tinycss2==1.0.2
+Wand==0.6.3
+webencodings==0.5.1
