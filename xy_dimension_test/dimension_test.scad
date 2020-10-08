@@ -1,5 +1,5 @@
-max_x = 302; // cura seems to need 1mm cut off each side in order to slice
-max_y = 263; // cura seems to need 1mm cut off each side in order to slice
+max_x = 296; // cura seems to need 1mm cut off each side in order to slice
+max_y = 284; // cura seems to need 1mm cut off each side in order to slice
 layer_height = 0.2;
 num_layers = 1;
 line_width = 1;
