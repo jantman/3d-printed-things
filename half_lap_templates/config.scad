@@ -16,6 +16,3 @@ template_padding = 0.05;
 
 // Thickness of the template walls
 template_wall_thickness = 3/32;
-
-// Offset to add to prevent faces from intersecting
-z_offset = 0.001;
