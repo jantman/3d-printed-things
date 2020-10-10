@@ -8,9 +8,17 @@ Files under other directories are remixes/forks (see their README files for deta
 
 Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2).
 
+## XY Dimension Test
+
+[xy_dimension_test/][xy_dimension_test/] - Various test prints for determining maximum printable size / XY dimensions.
+
 ## My CR-10S Printer
 
-[my-cr10s/](my-cr10s/) contains a complete 3D model of my CR-10S printer, as currently equipped, minus wires and filament.
+[my-cr10s/](my-cr10s/) - a complete 3D model of my CR-10S printer, as currently equipped, minus wires and filament.
+
+## Half-Lap Templates
+
+[half_lap_templates/](half_lap_templates/) - A set of templates for marking half-lap joints on dimensional lumber (currently US 2x4's), along with blocks for setting depth stops on saws and routers.
 
 ## STEP to STL to SCAD conversion
 
