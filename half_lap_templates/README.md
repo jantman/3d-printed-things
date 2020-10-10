@@ -4,8 +4,11 @@ A set of templates for marking half-lap joints on dimensional lumber, along with
 
 **Files are currently configured for US 2x4" nominal lumber**, but all of the SCAD files are parametric, so it should be possible to adjust them for other size boards via [config.scad](config.scad).
 
-* [config.scad](config.scad) - Configuration file containing lumber dimensions, offsets and padding, etc.
-* [half-lap_wide-wide_end.scad](half-lap_wide-wide_end.scad) - Template for marking the cut for a wide-face/wide-face half lap on the end of a board (i.e. cutting a board-width, half-board-depth lap on the wide face of the board, at one end).
+## Included Models
+
+[half-lap_wide-wide_end.scad](half-lap_wide-wide_end.scad) - Template for marking half-lap cuts on the wide face on the end of a board. Has two slots, one for lapping boards wide-face to wide-face, and one for lapping wide-face to end.
+
+[![half-lap_wide-wide_end](half-lap_wide-wide_end.png)](half-lap_wide-wide_end.png)
 
 ## Printing
 

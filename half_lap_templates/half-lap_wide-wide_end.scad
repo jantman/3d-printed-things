@@ -50,7 +50,7 @@ as_mm(convert_to_mm) {
         ]){
             rotate([0,0,-90]){
                 linear_extrude(2 * template_wall_thickness){
-                    text("\u2193 NARROW FACE \u2193", size=0.25, font="Liberation Mono:style=Bold", halign="center", valign="center");
+                    text("\u2193 END \u2193", size=0.25, font="Liberation Mono:style=Bold", halign="center", valign="center");
                 }
             }
         }
@@ -74,7 +74,7 @@ as_mm(convert_to_mm) {
         ]){
             rotate([0,0,-90]){
                 linear_extrude(2 * template_wall_thickness){
-                    text("http://antman.us/halflap", size=0.15, font="Liberation Mono:style=Bold", halign="center", valign="bottom");
+                    text("antman.us/halflap", size=0.2, font="Liberation Mono:style=Bold", halign="center", valign="bottom");
                 }
             }
         }
