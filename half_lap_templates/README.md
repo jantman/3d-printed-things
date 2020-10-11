@@ -6,15 +6,15 @@ A set of templates for marking half-lap joints on dimensional lumber, along with
 
 ## Included Models
 
-[depth_narrow_face.scad](depth_narrow_face.scad) - Depth gauge for router and saw half-lap on narrow face.
+[depth_narrow_face.scad](depth_narrow_face.scad) - Depth gauge for router and saw half-lap on narrow face. Print with 10-20% infill and no supports.
 
 [![depth_narrow_face.scad](depth_narrow_face.scad.png)](depth_narrow_face.scad.png]
 
-[depth_wide_face.scad](depth_wide_face.scad) - Depth gauge for router and saw half-lap on wide face.
+[depth_wide_face.scad](depth_wide_face.scad) - Depth gauge for router and saw half-lap on wide face. Print with 10-20% infill and no supports.
 
 [![depth_wide_face.scad](depth_wide_face.scad.png)](depth_wide_face.scad.png]
 
-[depth_wide_to_narrow_face.scad](depth_wide_to_narrow_face.scad) - Depth gauge for router and saw, lapping narrow face for a wide face.
+[depth_wide_to_narrow_face.scad](depth_wide_to_narrow_face.scad) - Depth gauge for router and saw, lapping narrow face for a wide face. Print with 10-20% infill and no supports.
 
 [![depth_wide_to_narrow_face.scad](depth_wide_to_narrow_face.scad.png)](depth_wide_to_narrow_face.scad.png]
 
