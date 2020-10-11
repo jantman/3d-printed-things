@@ -16,3 +16,15 @@ template_padding = 0.05;
 
 // Thickness of the template walls
 template_wall_thickness = 3/32;
+
+// Length of the depth template
+template_length = 4.0;
+
+// Width of the cut in the depth gauge
+saw_kerf = 0.2;
+
+// Diameter of the router bit hole in the depth gauge
+router_bit_dia = 1.4;
+
+// Height of raised text
+text_height = 1/16;

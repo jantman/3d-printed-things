@@ -6,9 +6,41 @@ A set of templates for marking half-lap joints on dimensional lumber, along with
 
 ## Included Models
 
-[half-lap_wide-wide_end.scad](half-lap_wide-wide_end.scad) - Template for marking half-lap cuts on the wide face on the end of a board. Has two slots, one for lapping boards wide-face to wide-face, and one for lapping wide-face to end.
+[depth_narrow_face.scad](depth_narrow_face.scad) - Depth gauge for router and saw half-lap on narrow face.
 
-[![half-lap_wide-wide_end](half-lap_wide-wide_end.png)](half-lap_wide-wide_end.png)
+[![depth_narrow_face.scad](depth_narrow_face.scad.png)](depth_narrow_face.scad.png]
+
+[depth_wide_face.scad](depth_wide_face.scad) - Depth gauge for router and saw half-lap on wide face.
+
+[![depth_wide_face.scad](depth_wide_face.scad.png)](depth_wide_face.scad.png]
+
+[depth_wide_to_narrow_face.scad](depth_wide_to_narrow_face.scad) - Depth gauge for router and saw, lapping narrow face for a wide face.
+
+[![depth_wide_to_narrow_face.scad](depth_wide_to_narrow_face.scad.png)](depth_wide_to_narrow_face.scad.png]
+
+[half-lap_narrow-half_narrow_cross.scad](half-lap_narrow-half_narrow_cross.scad) - Template for marking half-lap cuts on the wide face in the middle of a board, meeting half the narrow face end of a board. Print at 100% infill with supports.
+
+[![half-lap_narrow-half_narrow_cross.scad](half-lap_narrow-half_narrow_cross.scad.png)](half-lap_narrow-half_narrow_cross.scad.png]
+
+[half-lap_narrow-narrow_cross.scad](half-lap_narrow-narrow_cross.scad) - Template for marking half-lap cuts on the narrow face in the middle of a board, meeting the narrow face end of a board. Print at 100% infill with supports.
+
+[![half-lap_narrow-narrow_cross.scad](half-lap_narrow-narrow_cross.scad.png)](half-lap_narrow-narrow_cross.scad.png]
+
+[half-lap_narrow-narrow_end.scad](half-lap_narrow-narrow_end.scad) - Template for marking half-lap cuts on the narrow face on the end of a board. Print at 100% infill with supports.
+
+[![half-lap_narrow-narrow_end.scad](half-lap_narrow-narrow_end.scad.png)](half-lap_narrow-narrow_end.scad.png]
+
+[half-lap_wide-narrow_cross.scad](half-lap_wide-narrow_cross.scad) - Template for marking half-lap cuts on the wide face in the middle of a board, meeting the narrow face end of a board. Print at 100% infill with supports.
+
+[![half-lap_wide-narrow_cross.scad](half-lap_wide-narrow_cross.scad.png)](half-lap_wide-narrow_cross.scad.png]
+
+[half-lap_wide-wide_cross.scad](half-lap_wide-wide_cross.scad) - Template for marking half-lap cuts on the wide face in the middle of a board. Print at 100% infill with supports.
+
+[![half-lap_wide-wide_cross.scad](half-lap_wide-wide_cross.scad.png)](half-lap_wide-wide_cross.scad.png]
+
+[half-lap_wide-wide_end.scad](half-lap_wide-wide_end.scad) - Template for marking half-lap cuts on the wide face on the end of a board. Has two slots, one for lapping boards wide-face to wide-face, and one for lapping wide-face to end. Print at 100% infill with supports.
+
+[![half-lap_wide-wide_end.scad](half-lap_wide-wide_end.scad.png)](half-lap_wide-wide_end.scad.png]
 
 ## Printing
 

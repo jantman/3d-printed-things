@@ -78,14 +78,5 @@ as_mm(convert_to_mm) {
                 }
             }
         }
-        // URL text
-        // this won't really print. oh well. if you want to know where you got it, write it on the print.
-        /* translate([0.1,template_wall_thickness,0.1]) {
-            rotate([90,0,0]) {
-                linear_extrude(2 * template_wall_thickness){
-                    text("github.com/jantman/3d-printed-things", size=0.15, font="Liberation Mono:style=Bold", halign="left", valign="bottom");
-                }
-            }
-        } */
     }
 }
