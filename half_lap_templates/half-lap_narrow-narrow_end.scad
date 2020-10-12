@@ -14,21 +14,14 @@ as_mm(convert_to_mm) {
         }
         // this cube represents the inner face of the template, touching the lumber
         cube([template_depth, board_narrow_face + template_padding, board_wide_face + template_padding]);
-        // cut-out for marking wide-face half-lap inner edge
-        translate([board_narrow_face-(board_narrow_face/3),-1 * template_wall_thickness, board_wide_face * 0.5]){
-            cube([
-              board_narrow_face/3,
-              board_narrow_face + template_padding + (2 * template_wall_thickness),
-              board_wide_face
-            ]);
-        }
         // cutout for marking narrow-face half-lap inner edge
         translate([0,-1 * template_wall_thickness, board_wide_face * 0.5]){
             cube([
-              board_wide_face * 0.5,
+              board_narrow_face,
               board_narrow_face + template_padding + (2 * template_wall_thickness),
-              board_wide_face
+              (board_wide_face * 0.5) + template_padding + template_wall_thickness
             ]);
+            echo(str("Opening will be ", board_wide_face * 0.5, " long x ", board_narrow_face, " deep x ", board_wide_face * 0.5, " high"));
         }
         // nominal dimension text
         translate([
