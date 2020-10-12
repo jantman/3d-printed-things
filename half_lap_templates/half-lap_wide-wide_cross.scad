@@ -19,7 +19,7 @@ as_mm(convert_to_mm) {
             cube([
               board_wide_face,
               board_wide_face + template_padding + (2 * template_wall_thickness),
-              board_narrow_face
+              (board_narrow_face/2) + template_wall_thickness + template_padding
             ]);
         }
         // nominal dimension text
