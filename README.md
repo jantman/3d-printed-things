@@ -1,5 +1,7 @@
 # 3d-printed-things
 
+[![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
+
 Collection of things I've 3d printed and might want to print again.
 
 Files under [backup/](backup/) are backups/mirrors of things I've printed before and might want to again, even if their current hosting/location disappears. Please see the directories and/or source links for attribution and license.
