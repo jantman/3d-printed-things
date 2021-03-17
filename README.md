@@ -10,9 +10,13 @@ Files under other directories are remixes/forks (see their README files for deta
 
 Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2).
 
+## SharpWriter Center Finder
+
+[sharpwriter_center_finder/](sharpwriter_center_finder) - A "center finder" jig for marking the center of boards, sized to fit a PaperMate SharpWriter pencil.
+
 ## XY Dimension Test
 
-[xy_dimension_test/][xy_dimension_test/] - Various test prints for determining maximum printable size / XY dimensions.
+[xy_dimension_test/](xy_dimension_test/) - Various test prints for determining maximum printable size / XY dimensions.
 
 ## My CR-10S Printer
 
