@@ -12,6 +12,6 @@ difference() {
     cylinder(h=0.5 * inches_to_mm, d=(0.33 + shaft_padding) * inches_to_mm, $fn=36);
   }
   translate([0,0,-0.5 * inches_to_mm]){
-    cylinder(h=2 * inches_to_mm, d=(0.02 + pencil_padding) * inches_to_mm, $fn=36);
+    cylinder(h=2 * inches_to_mm, d=0.05 * inches_to_mm, $fn=36);
   }
 }
