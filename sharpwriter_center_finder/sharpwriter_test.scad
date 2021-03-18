@@ -1,5 +1,6 @@
 inches_to_mm = 25.4;
 pencil_padding = 0.003;
+shaft_padding = 0.0015;
 spacing = 0.2;
 
 difference() {
@@ -8,9 +9,9 @@ difference() {
   }
   cylinder(h=0.705 * inches_to_mm, d1=(0.07 + pencil_padding) * inches_to_mm, d2=(0.33 + pencil_padding) * inches_to_mm, $fn=36);
   translate([0,0,0.705 * inches_to_mm]) {
-    cylinder(h=0.5 * inches_to_mm, d=(0.33 + pencil_padding) * inches_to_mm, $fn=36);
+    cylinder(h=0.5 * inches_to_mm, d=(0.33 + shaft_padding) * inches_to_mm, $fn=36);
   }
   translate([0,0,-0.5 * inches_to_mm]){
-    #cylinder(h=2 * inches_to_mm, d=(0.02 + pencil_padding) * inches_to_mm, $fn=36);
+    cylinder(h=2 * inches_to_mm, d=(0.02 + pencil_padding) * inches_to_mm, $fn=36);
   }
 }
