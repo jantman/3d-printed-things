@@ -25,25 +25,8 @@ module plate()
       support_leg();
     }
     // text for the offset width
-    translate([-0.4 * lumber_thickness,-0.55 * plate_width,plate_thickness]) {
+    translate([-0.6 * lumber_thickness,-0.55 * plate_width,plate_thickness]) {
       linear_extrude(height=0.125) {
-        text("1/8", size=0.15, valign="bottom", halign="center", spacing=1);
-      }
-    }
-    // @TODO - FIXME - Update these
-    // testing various text methods
-    translate([-0.2 * lumber_thickness,-0.55 * plate_width,plate_thickness]) {
-      linear_extrude(height=0.1) {
-        text("1/8", size=0.15, valign="bottom", halign="center", spacing=1);
-      }
-    }
-    translate([0,-0.55 * plate_width,plate_thickness]) {
-      linear_extrude(height=0.05) {
-        text("1/8", size=0.15, valign="bottom", halign="center", spacing=1);
-      }
-    }
-    translate([0.2 * lumber_thickness,-0.55 * plate_width,plate_thickness]) {
-      linear_extrude(height=0.025) {
         text("1/8", size=0.15, valign="bottom", halign="center", spacing=1);
       }
     }
