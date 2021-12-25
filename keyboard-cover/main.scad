@@ -50,6 +50,6 @@ intersection() { // TODO: For printing a small sizing sample
   }
    // TODO: For printing a small sizing sample
   translate([-10, -10, 0]){
-    cube([60, overall_depth *2, (overall_height + keys_height) * 2], false);
+    cube([40, overall_depth *2, (overall_height + keys_height) * 2], false);
   }
 }
