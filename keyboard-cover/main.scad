@@ -7,7 +7,7 @@ keys_width = 344;
 
 overall_depth = 142;
 keys_depth = 124;
-back_extra_depth = 3;
+back_extra_depth = 0;
 
 overall_height = 15;
 keys_height = 13; // actually measured 10
@@ -19,7 +19,7 @@ outer_modifier = wall_thickness * 2;
 module keybd(ow, kw, od, kd, bed, oh, kh, wt, is_top = false) {
   corner_radius = wt;
   union() {
-    translate([0,bed / 2,0]){
+    translate([0,1.5,0]){
       if(is_top) {
         roundedcube([ow, od + bed, oh], false, corner_radius, "zmax");
       }
