@@ -2,8 +2,8 @@
 use <roundedcube.scad>;
 
 // all dimensions in mm
-overall_width = 362;
-keys_width = 344;
+overall_width = 364;
+keys_width = 346;
 
 overall_depth = 142;
 keys_depth = 124;
