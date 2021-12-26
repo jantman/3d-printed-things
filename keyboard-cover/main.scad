@@ -37,19 +37,13 @@ module keybd(ow, kw, od, kd, bed, oh, kh, wt, is_top = false) {
   }
 }
 
-intersection() { // TODO: For printing a small sizing sample
-  difference() {
-    color("Blue") {
-      keybd(overall_width + outer_modifier, keys_width + outer_modifier, overall_depth + outer_modifier, keys_depth + outer_modifier, back_extra_depth, overall_height + wall_thickness, keys_height, wall_thickness, true);
-    }
-    color("Gold") {
-      translate([wall_thickness, wall_thickness, 0]) {
-        keybd(overall_width, keys_width, overall_depth, keys_depth, back_extra_depth, overall_height, keys_height, wall_thickness);
-      }
-    }
+difference() {
+  color("Blue") {
+    keybd(overall_width + outer_modifier, keys_width + outer_modifier, overall_depth + outer_modifier, keys_depth + outer_modifier, back_extra_depth, overall_height + wall_thickness, keys_height, wall_thickness, true);
   }
-   // TODO: For printing a small sizing sample
-  translate([-10, -10, 0]){
-    cube([40, overall_depth *2, (overall_height + keys_height) * 2], false);
+  color("Gold") {
+    translate([wall_thickness, wall_thickness, 0]) {
+      keybd(overall_width, keys_width, overall_depth, keys_depth, back_extra_depth, overall_height, keys_height, wall_thickness);
+    }
   }
 }
