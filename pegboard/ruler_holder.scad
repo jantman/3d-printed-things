@@ -1,7 +1,29 @@
+// THIS FILE: https://github.com/jantman/3d-printed-things/blob/master/pegboard/ruler_holder.scad
+
+// from: https://danielupshaw.com/openscad-rounded-corners/
+use <roundedcube.scad>;
+
+// from: https://www.thingiverse.com/thing:2583402
 use <Parametric_Pegboard_Base.scad>;
-// For my pegboard, I want to override the following defaults:
-// peg_clearance (how far undersized the pegs should be) defaults to 0.25, let's make it 0.5
-// peg_height (how thick is the pegboard) defaults to 3.175, but my board is more like 5 or 5.5mm
-// peg_angle defaults to 60; trying to fit those in snaps them right off
-// IMPORTANT: depth is set to 2 just to provide a quicker print for testing
-pegboard_base(2, 2, clearance=0.5, height=2.5, angle=45, depth=2);
+
+cols = 2;
+base_width = 25.4 * cols;
+corner_radius = 2;
+
+difference() {
+  union() {
+    translate([0,-0.1,0]){
+      pegboard_base(cols, 2, clearance=0.5, height=2.5, angle=45, depth=2);
+    }
+    translate([0,-2,0]) {
+      roundedcube([base_width, 26, 25.4 * 2], false, corner_radius, "all");
+    }
+  }
+  translate([-25,2,5]) {
+    rotate(a=[20,0,0]){
+      color("blue") {
+        cube([2 * base_width, 50, 3]);
+      }
+    }
+  }
+}
