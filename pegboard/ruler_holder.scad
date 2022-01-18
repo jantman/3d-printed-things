@@ -6,7 +6,7 @@ use <roundedcube.scad>;
 // from: https://www.thingiverse.com/thing:2583402
 use <Parametric_Pegboard_Base.scad>;
 
-cols = 2;
+cols = 4;
 base_width = 25.4 * cols;
 corner_radius = 2;
 
