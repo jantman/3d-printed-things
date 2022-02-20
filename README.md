@@ -18,6 +18,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [60mm_fan_blower/](60mm_fan_blower/) - A part to allow snapping in a 60mm fan and converting it to a round ~7/8" outlet for use as a blower.
 
+## Air Tool Connector Dust Cover
+
+[air-connector-dust-cover/](air-connector-dust-cover/) - A dust cover for standard 1/4" Industrial (a.k.a "I/M" or "Milton M-style" or "Type D") air tool connectors.
+
 ## Half-Lap Templates
 
 [half_lap_templates/](half_lap_templates/) - A set of templates for marking half-lap joints on dimensional lumber (currently US 2x4's), along with blocks for setting depth stops on saws and routers.
