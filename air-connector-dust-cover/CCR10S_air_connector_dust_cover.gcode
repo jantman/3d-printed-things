@@ -9,9 +9,9 @@
 ;MAXY:171.734
 ;MAXZ:12
 ;Generated with Cura_SteamEngine master
-M104 S228
+M104 S240
 M105
-M109 S228
+M109 S240
 M82 ;absolute extrusion mode
 M201 X500.00 Y500.00 Z100.00 E5000.00 ;Setup machine max acceleration
 M203 X500.00 Y500.00 Z10.00 E50.00 ;Setup machine max feedrate
@@ -30348,5 +30348,6 @@ M104 S0
 ;SETTING_3 n\\n", "extruder_quality": ["[general]\\nversion = 4\\nname = Standar
 ;SETTING_3 d Quality #3\\ndefinition = creality_cr10s\\n\\n[metadata]\\ntype = q
 ;SETTING_3 uality_changes\\nquality_type = standard\\nsetting_version = 19\\npos
-;SETTING_3 ition = 0\\n\\n[values]\\ninfill_sparse_density = 50.0\\nretraction_e
-;SETTING_3 nable = False\\nspeed_print = 35\\n\\n"]}
+;SETTING_3 ition = 0\\n\\n[values]\\ninfill_sparse_density = 50.0\\nmaterial_pri
+;SETTING_3 nt_temperature = 240\\nretraction_enable = False\\nspeed_print = 35\\
+;SETTING_3 n\\n"]}
