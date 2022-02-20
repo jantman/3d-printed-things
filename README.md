@@ -10,21 +10,41 @@ Files under other directories are remixes/forks (see their README files for deta
 
 Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2).
 
-## SharpWriter Center Finder
+## 3/4" Square Tube Connector
 
-[sharpwriter_center_finder/](sharpwriter_center_finder) - A "center finder" jig for marking the center of boards, sized to fit a PaperMate SharpWriter pencil.
+[3-4_inch_tube_connector/](3-4_inch_tube_connector/) - A part to connect two pieces of 3/4" aluminum square tubing
 
-## XY Dimension Test
+## 60mm Fan Blower
 
-[xy_dimension_test/](xy_dimension_test/) - Various test prints for determining maximum printable size / XY dimensions.
+[60mm_fan_blower/](60mm_fan_blower/) - A part to allow snapping in a 60mm fan and converting it to a round ~7/8" outlet for use as a blower.
+
+## Half-Lap Templates
+
+[half_lap_templates/](half_lap_templates/) - A set of templates for marking half-lap joints on dimensional lumber (currently US 2x4's), along with blocks for setting depth stops on saws and routers.
+
+## Keyboard Cover
+
+[keyboard-cover/](keyboard-cover/) - A cover for a Leopold FC200RT/KB "tenkeyless" mechanical keyboard.
 
 ## My CR-10S Printer
 
 [my-cr10s/](my-cr10s/) - a complete 3D model of my CR-10S printer, as currently equipped, minus wires and filament.
 
-## Half-Lap Templates
+## Pegboard Accessories
 
-[half_lap_templates/](half_lap_templates/) - A set of templates for marking half-lap joints on dimensional lumber (currently US 2x4's), along with blocks for setting depth stops on saws and routers.
+[pegboard/](pegboard/) - A collection of holders for US standard 1"-on-center pegboard.
+
+## SharpWriter Center Finder
+
+[sharpwriter_center_finder/](sharpwriter_center_finder) - A "center finder" jig for marking the center of boards, sized to fit a PaperMate SharpWriter pencil.
+
+## Stencils
+
+[stencils/](stencils/) - Some stencils for use with spray paint.
+
+## XY Dimension Test
+
+[xy_dimension_test/](xy_dimension_test/) - Various test prints for determining maximum printable size / XY dimensions.
 
 ## STEP to STL to SCAD conversion
 
