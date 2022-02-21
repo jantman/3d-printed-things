@@ -1,6 +1,6 @@
 # Air Connector Dust Cover
 
-This is a model of a dust cover/cap for standard US 1/4" 1/4" Industrial (a.k.a "I/M" or "Milton M-style" or "Type D") air tool connectors. It keeps the dust out of your air tools, and the little drips of oil (if applicable) in.
+This is a model of a dust cover/cap for standard US 1/4" 1/4" Industrial (a.k.a "I/M" or "Milton M-style" or "Type D") air tool connectors. It keeps the dust out of your air tools, and the little drips of oil (if applicable) in. The loop on the end of the strap is just wide enough to stretch over the 9/16" hex wrench flats on standard 1/4" air connectors.
 
 This is designed to be printed with a flexible filament such as TPU. On my CR-10S with a direct drive extruder, I printed using Hatchbox red TPU extruded at 240C, bed heat off, 50% infill, 0.2mm layer height, a print speed of only 15mm/s, and retraction disabled. I also had to loosen the screw on the extruder swing arm to reduce the spring tension.
 
