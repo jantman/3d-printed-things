@@ -10,35 +10,35 @@ module shelf_with_holes(width, depth, thickness) {
   difference() {
     cube([width, depth, thickness]);
     // 4.5x10 hole for tweezers
-    translate([8,depth - (back_spacing + 5),thickness / 2]) {
+    translate([10,depth - (back_spacing + 5),thickness / 2]) {
       rounded_prismoid(size1=[4.5,10], size2=[8.5,14], h=2.01, r=2);
       translate([0,0,-2]) {
         rounded_prismoid(size1=[4.5,10], size2=[4.5,10], h=2.01, r=2);
       }
     }
     // 4.5x15 hole for forceps
-    translate([20,depth - (back_spacing + 7.5),thickness / 2]) {
+    translate([24,depth - (back_spacing + 7.5),thickness / 2]) {
       rounded_prismoid(size1=[4.5,15], size2=[8.5,19], h=2.01, r=2);
       translate([0,0,-2]) {
         rounded_prismoid(size1=[4.5,15], size2=[4.5,15], h=2.01, r=2);
       }
     }
     // 4.5x15 hole for forceps
-    translate([33,depth - (back_spacing + 7.5),thickness / 2]) {
+    translate([38,depth - (back_spacing + 7.5),thickness / 2]) {
       rounded_prismoid(size1=[4.5,15], size2=[8.5,19], h=2.01, r=2);
       translate([0,0,-2]) {
         rounded_prismoid(size1=[4.5,15], size2=[4.5,15], h=2.01, r=2);
       }
     }
     // 4.5x10 hole for tweezers
-    translate([45,depth - (back_spacing + 5),thickness / 2]) {
+    translate([51,depth - (back_spacing + 5),thickness / 2]) {
       rounded_prismoid(size1=[4.5,10], size2=[8.5,14], h=2.01, r=2);
       translate([0,0,-2]) {
         rounded_prismoid(size1=[4.5,10], size2=[4.5,10], h=2.01, r=2);
       }
     }
     // 4.5x10 hole for tweezers
-    translate([58,depth - (back_spacing + 5),thickness / 2]) {
+    translate([65,depth - (back_spacing + 5),thickness / 2]) {
       rounded_prismoid(size1=[4.5,10], size2=[8.5,14], h=2.01, r=2);
       translate([0,0,-2]) {
         rounded_prismoid(size1=[4.5,10], size2=[4.5,10], h=2.01, r=2);
@@ -47,7 +47,7 @@ module shelf_with_holes(width, depth, thickness) {
   }
 }
 
-cols = 4;
+cols = 3;
 base_width = 25.4 * cols;
 base_height = 24.4 * 2;
 corner_radius = 2;
@@ -58,8 +58,8 @@ translate([0,-1.01,0]){
   }
 }
 
-shelf_width = (base_width - 43) + 8;
+shelf_width = base_width;
 
-translate([17,-30.9,31]) {
+translate([0,-30.9,31]) {
   shelf_with_holes(width=shelf_width, depth=30, thickness=4);
 }
