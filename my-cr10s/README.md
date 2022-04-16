@@ -12,6 +12,7 @@ This directory contains complete 3D models of my Creality CR-10S printer, as equ
   * [output/printer_fixed_shell.stl](output/printer_fixed_shell.stl) - Result of running ``printer_fixed.stl`` through [Meshlab](https://www.meshlab.net/) using the filter script [output/make_shell.mlx](output/make_shell.mlx) which uses [Ambient Occlusion](https://www.embodi3d.com/blogs/entry/425-meshlab-ambient-occlusion-for-hollowing/) to hollow out the model and remove many smaller faces. This is used to generate a very rough, but very small (from ~44MB / 907902 facets to ~3.6MB / 75061) shell of the printer that can be used when all that's needed are the external dimensions, i.e. when designing a workbench for it.
   * [output/control_box.stl](output/control_box.stl) - Similar to the printer variant, but for just the control box.
   * [output/control_box_fixed.stl](output/control_box_fixed.stl) - admesh'ed version of above.
+* [marlin-configs/](marlin-configs/) - my Marlin configuration files
 
 ## Sources and Acknowledgements
 
