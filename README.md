@@ -38,6 +38,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [pegboard/](pegboard/) - A collection of holders for US standard 1"-on-center pegboard.
 
+## R8 Collet Holders and Similar
+
+[R8_collet_holders/](R8_collet_holders/) - Some R8 collet holders and related things intended to sit in a drawer and connect together with dovetails.
+
 ## SharpWriter Center Finder
 
 [sharpwriter_center_finder/](sharpwriter_center_finder) - A "center finder" jig for marking the center of boards, sized to fit a PaperMate SharpWriter pencil.
