@@ -66,14 +66,14 @@ difference() {
     }
   }
   // bottom female dovetail
-  translate([(overall_width / 2) - dovetail_depth, (dovetail_max_width / 2) + dovetail_bottom_inset, 0]) {
-    rotate([0, 0, -90]) {
+  translate([overall_width / 2, (dovetail_max_width / 2) + dovetail_bottom_inset, 0]) {
+    rotate([0, 0, 90]) {
       female_dovetail_negative(max_width=dovetail_max_width, min_width=dovetail_min_width, depth=dovetail_depth, height=overall_height, clearance=dovetail_female_clearance);
     }
   }
   // top female dovetail
-  translate([(overall_width / 2) - dovetail_depth, overall_length - ((dovetail_max_width / 2) + dovetail_top_inset), 0]) {
-    rotate([0, 0, -90]) {
+  translate([overall_width / 2, overall_length - ((dovetail_max_width / 2) + dovetail_top_inset), 0]) {
+    rotate([0, 0, 90]) {
       female_dovetail_negative(max_width=dovetail_max_width, min_width=dovetail_min_width, depth=dovetail_depth, height=overall_height, clearance=dovetail_female_clearance);
     }
   }
