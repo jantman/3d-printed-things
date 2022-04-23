@@ -36,13 +36,13 @@ difference() {
     union() {
       cube([overall_width, overall_length, overall_height]);
       // bottom male dovetail
-      translate([-0.1, (dovetail_max_width / 2) + dovetail_bottom_inset, 0]) {
+      translate([0.1, (dovetail_max_width / 2) + dovetail_bottom_inset, 0]) {
         rotate([0, 0, 90]) {
           male_dovetail(max_width=dovetail_max_width, min_width=dovetail_min_width, depth=dovetail_depth, height=overall_height, cutout_width=dovetail_cutout_width, cutout_depth=dovetail_cutout_depth);
         }
       }
       // top male dovetail
-      translate([-0.1, overall_length - ((dovetail_max_width / 2) + dovetail_top_inset), 0]) {
+      translate([0.1, overall_length - ((dovetail_max_width / 2) + dovetail_top_inset), 0]) {
         rotate([0, 0, 90]) {
           male_dovetail(max_width=dovetail_max_width, min_width=dovetail_min_width, depth=dovetail_depth, height=overall_height, cutout_width=dovetail_cutout_width, cutout_depth=dovetail_cutout_depth);
         }
