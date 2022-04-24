@@ -18,15 +18,7 @@ module endmill_collet(base_diam, max_diam, total_len, tolerance) {
   union() { //addative
     collet(base_diam, chamfir_len, shaft_len, max_diam, taper_len);
     translate([0,0,total_len])
-    curve_top(rad=65, diam=max_diam);
-  }
-}
-
-module curve_top(rad = 100, diam = 40, h=2) {
-  intersection() {
-    translate([0,0,-rad + h])
-      sphere(r=rad, $fn=100);
-    cylinder(d=diam, h=h*2);
+    cylinder(d=max_diam, h=4.5);
   }
 }
 
