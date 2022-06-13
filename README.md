@@ -50,6 +50,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [stencils/](stencils/) - Some stencils for use with spray paint.
 
+## Tape Measure Wall Holder
+
+[tape_measure_wall_holder/](tape_measure_wall_holder/) - Hinged plate to hold the end of a tape measure 3.5" or 4.5" in from the edge of floor decking, for marking wall locations.
+
 ## XY Dimension Test
 
 [xy_dimension_test/](xy_dimension_test/) - Various test prints for determining maximum printable size / XY dimensions.
