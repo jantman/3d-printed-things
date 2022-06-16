@@ -28,14 +28,14 @@ module plate() {
                 cube([tape_post_length, tape_post_width, plate_thickness + tape_post_height]);
             }
             translate([inch(3.5) + tape_post_x_start - (tape_post_cyl_to_block + (tape_post_cylinder_dia / 2)), tape_post_inset + (tape_post_width / 2), 0]) {
-                cylinder(d=tape_post_cylinder_dia, h=tape_post_cylinder_height);
+                cylinder(d=tape_post_cylinder_dia, h=tape_post_cylinder_height + plate_thickness);
             }
             // block for long tape @ 4.5"
             translate([inch(4.5) + tape_post_x_start, plate_width - (tape_post_inset + tape_post_width), 0]) {
                 cube([tape_post_length, tape_post_width, plate_thickness + tape_post_height]);
             }
             translate([inch(4.5) + tape_post_x_start - (tape_post_cyl_to_block + (tape_post_cylinder_dia / 2)), plate_width - (tape_post_inset + (tape_post_width / 2)), 0]) {
-                cylinder(d=tape_post_cylinder_dia, h=tape_post_cylinder_height);
+                cylinder(d=tape_post_cylinder_dia, h=tape_post_cylinder_height + plate_thickness);
             }
             // plate overhang / tab
             translate([-1 * (plate_tab_overhang + arm_thickness), 0, -1 * (arm_thickness * 2)]) {
