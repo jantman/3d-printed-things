@@ -32,7 +32,7 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 ## My CR-10S Printer
 
-[my-cr10s/](my-cr10s/) - a complete 3D model of my CR-10S printer, as currently equipped, minus wires and filament.
+[my-cr10s/](my-cr10s/) - a complete 3D model of my CR-10S printer, as currently equipped, minus wires and filament. Plus components I've printed for it, my Marlin firmware configs, test/troubleshooting prints, etc.
 
 ## Pegboard Accessories
 
@@ -53,6 +53,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 ## Tape Measure Wall Holder
 
 [tape_measure_wall_holder/](tape_measure_wall_holder/) - Hinged plate to hold the end of a tape measure 3.5" or 4.5" in from the edge of floor decking, for marking wall locations.
+
+## Temperature Towers
+
+[temp-tower/](temp-tower/) generator and models
 
 ## XY Dimension Test
 
