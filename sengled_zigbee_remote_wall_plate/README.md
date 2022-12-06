@@ -2,7 +2,8 @@
 
 Standard US-style toggle light switch wall plate that holds a [Sengled E39-G8C](https://smile.amazon.com/gp/product/B07QHDV5S4/) Zigbee remote control in front of the toggle switch, but lets you access the switch by sliding the remote out.
 
-* - 2.5" wide, suitable for use on top of a multi-gang switch plate.
+* [main.scad](main.scad) - Remote holder with an attached standard-size, device-mount wall plate.
+* [holder_only.scad](holder_only.scad) - Remote holder that screws on top of a standard size device-mount wall plate with a toggle switch.
 
 ## Notes
 
