@@ -23,7 +23,7 @@ module remote_holder(back_thickness = 0) {
             }
             // switch and screw opening
             backcut_ht = (wall_thickness * 2) + switch_depth;
-            translate([0, (-1 * ((rmt_height - inch(3)) / 2)) - wall_thickness, (-1 * (thickness - backcut_ht) / 2) - 0.001]) {
+            translate([0, (-1 * ((rmt_height - inch(3)) / 2)) - wall_thickness, (-1 * (thickness - back_thickness - backcut_ht) / 2) - 0.001]) {
                 cube([(rmt_width * 0.5) + inch(0.25), rmt_height, backcut_ht], center=true);
             }
         }

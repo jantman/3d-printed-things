@@ -3,31 +3,33 @@ include <config.scad>;
 use <roundedcube.scad>;
 
 module plate(height_inches, width_inches) {
-    screw_spacing_vertical = inch(2.375);
-    opening_height = inch(0.96);
-    opening_width = inch(0.42);
-    thickness = inch(0.1);
+    include <config.scad>;
     depth = inch(0.25);
 
     difference() {
         translate([-1 * (width_inches / 2), -1 * (height_inches / 2), -1 * depth]) {
             difference() {
                 plate_outline(height_inches, width_inches, depth);
-                translate([thickness / 2, thickness / 2, -1 * thickness]) {
-                    plate_outline(height_inches - (thickness * 2), width_inches - (thickness * 2), depth);
+                translate([plate_thickness / 2, plate_thickness / 2, -1 * plate_thickness]) {
+                    plate_outline(height_inches - (plate_thickness * 2), width_inches - (plate_thickness * 2), depth);
                 }
             }
         }
-        // toggle switch opening
-        translate([0, 0, -1 * depth]) {
-            cube([opening_width, opening_height, depth * 3], center=true);
-        }
-        translate([0, screw_spacing_vertical / 2, 0]) {
-            screw_hole(depth, thickness);
-        }
-        translate([0, -1 * (screw_spacing_vertical / 2), 0]) {
-            screw_hole(depth, thickness);
-        }
+        plate_openings(depth, plate_thickness);
+    }
+}
+
+module plate_openings(depth, thickness) {
+    include <config.scad>;
+    // toggle switch opening
+    translate([0, 0, -1 * depth]) {
+        cube([opening_width, opening_height, depth * 3], center=true);
+    }
+    translate([0, screw_spacing_vertical / 2, 0]) {
+        screw_hole(depth, thickness);
+    }
+    translate([0, -1 * (screw_spacing_vertical / 2), 0]) {
+        screw_hole(depth, thickness);
     }
 }
 
