@@ -35,12 +35,8 @@ module plate_openings(depth, thickness) {
 
 module screw_hole(depth, thickness) {
     hole_size = inch(0.18);
-    countersink_size = inch(0.35);
     translate([0, 0, (-1 * depth) + 0.001]) {
-        cylinder(d=hole_size, h=depth, $fn=360);
-    }
-    translate([0, 0, (-1 * (thickness / 2)) + 0.001]) {
-        cylinder(d1=hole_size, d2=countersink_size, h=thickness, $fn=360);
+        cylinder(d=hole_size, h=depth * 2, $fn=360);
     }
 }
 
