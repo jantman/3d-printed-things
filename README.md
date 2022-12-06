@@ -42,6 +42,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [R8_collet_holders/](R8_collet_holders/) - Some R8 collet holders and related things intended to sit in a drawer and connect together with dovetails.
 
+## Sengled Zigbee Remote Wall Plate
+
+[sengled_zigbee_remote_wall_plate/](sengled_zigbee_remote_wall_plate/) - Standard US-style toggle light switch wall plate that holds a [Sengled E39-G8C](https://smile.amazon.com/gp/product/B07QHDV5S4/) Zigbee remote control in front of the toggle switch, but lets you access the switch by sliding the remote out.
+
 ## SharpWriter Center Finder
 
 [sharpwriter_center_finder/](sharpwriter_center_finder) - A "center finder" jig for marking the center of boards, sized to fit a PaperMate SharpWriter pencil.
