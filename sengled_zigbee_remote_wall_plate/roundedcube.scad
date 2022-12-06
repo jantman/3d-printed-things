@@ -1,5 +1,5 @@
 // Higher definition curves
-$fs = 0.01;
+$fn = 120;
 
 module roundedcube(size = [1, 1, 1], center = false, radius = 0.5, apply_to = "all") {
 	// If single value, convert to [x, y, z] vector

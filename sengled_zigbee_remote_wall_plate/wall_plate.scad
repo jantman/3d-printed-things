@@ -33,7 +33,7 @@ module plate(height_inches, width_inches) {
 
 module screw_hole(depth, thickness) {
     hole_size = inch(0.18);
-    countersink_size = inch(0.25);
+    countersink_size = inch(0.35);
     translate([0, 0, (-1 * depth) + 0.001]) {
         cylinder(d=hole_size, h=depth, $fn=360);
     }
