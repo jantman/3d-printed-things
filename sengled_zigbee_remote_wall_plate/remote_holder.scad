@@ -3,7 +3,7 @@ use <roundedcube.scad>;
 
 rmt_height = inch(3.56);
 rmt_width = inch(1.430);
-rmt_depth = inch(0.462);
+rmt_depth = inch(0.362);
 
 module remote_holder(back_thickness = 0) {
     switch_depth = inch(0.4);
@@ -14,7 +14,7 @@ module remote_holder(back_thickness = 0) {
         difference() {
             roundedcube(size = [rmt_width + (wall_thickness * 2), inch(3), thickness], center = true, radius = wall_thickness, apply_to = "zmax");
             // hollow for remote
-            translate([0, (-1 * ((rmt_height - inch(3)) / 2)) - wall_thickness, inch(0.1)]) {
+            translate([0, (-1 * ((rmt_height - inch(3)) / 2)) - wall_thickness, inch(0.2)]) {
                 remote();
             }
             // front opening
