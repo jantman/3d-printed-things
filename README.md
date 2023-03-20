@@ -22,6 +22,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [air-connector-dust-cover/](air-connector-dust-cover/) - A dust cover for standard 1/4" Industrial (a.k.a "I/M" or "Milton M-style" or "Type D") air tool connectors.
 
+## Dremel Grinding Stone Holder
+
+[dremel-grinding-stone-holder/](dremel-grinding-stone-holder/) - A block with holes in it, to hold a set of 56 1/8" (3mm) shaft grinding stones, such as for a Dremel tool. Designed for stones up to 12mm (~1/2") diameter.
+
 ## Half-Lap Templates
 
 [half_lap_templates/](half_lap_templates/) - A set of templates for marking half-lap joints on dimensional lumber (currently US 2x4's), along with blocks for setting depth stops on saws and routers.
