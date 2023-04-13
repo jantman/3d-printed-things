@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'my-cr10s/marlin-configs/**'
+      - '.github/workflows/build-firmware.yml'
 jobs:
   build:
     runs-on: ubuntu-latest
