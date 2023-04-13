@@ -45,5 +45,5 @@ jobs:
         with:
           tag: ${{ steps.set-release-name.outputs.RELEASE }}
           makeLatest: true
-          artifacts: ".pio/build/${{ env.PLATFORM }}/firmware.hex"
+          artifacts: "marlin/.pio/build/**/firmware.hex"
           body: ${{ steps.set-release-name.outputs.RELEASE }}
