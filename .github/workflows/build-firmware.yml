@@ -30,7 +30,7 @@ jobs:
           ref: ${{ steps.set-marlin-version.outputs.MARLIN_VERSION }}
           path: marlin
       - name: copy-configs
-        run: cp -f my-cr10s/marlin-configs/ marlin/Marlin/
+        run: cp -f my-cr10s/marlin-configs/* marlin/Marlin/
       - name: Build PlatformIO
         run: cd marlin && platformio run -e mega2560
       - name: ls output
