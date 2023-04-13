@@ -22,7 +22,8 @@ jobs:
       - name: Set Marlin Version
         id: set-marlin-version
         run: echo "MARLIN_VERSION=$(cat my-cr10s/marlin-configs/marlin-version)" >> $GITHUB_OUTPUT
-      - name: actions/checkout@v3
+      - name: Checkout Marlin
+        uses: actions/checkout@v3
         with:
           repository: MarlinFirmware/Marlin
           ref: ${{ steps.set-marlin-version.outputs.MARLIN_VERSION }}
