@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PLATFORM=mega2560
     steps:
       - uses: actions/checkout@v3
       - name: Set Release Name
@@ -35,7 +37,7 @@ jobs:
       - name: copy-configs
         run: cp -f my-cr10s/marlin-configs/* marlin/Marlin/
       - name: Build PlatformIO
-        run: cd marlin && platformio run -e mega2560
+        run: cd marlin && platformio run -e ${{ env.PLATFORM }}
       - name: ls output
         run: cd marlin && find .pio/build -ls
       - name: Create Release
@@ -43,5 +45,5 @@ jobs:
         with:
           tag: ${{ steps.set-release-name.outputs.RELEASE }}
           makeLatest: true
-          artifacts: ".pio/build/*/firmware.hex"
+          artifacts: ".pio/build/${{ env.PLATFORM }}/firmware.hex"
           body: ${{ steps.set-release-name.outputs.RELEASE }}
