@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set Release Name
+        id: set-release-name
+        run: echo "RELEASE=$(date +%Y%m%d%H%M%S)_$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       - uses: actions/cache@v3
         with:
           path: |
@@ -35,3 +38,10 @@ jobs:
         run: cd marlin && platformio run -e mega2560
       - name: ls output
         run: cd marlin && find .pio/build -ls
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.set-release-name.outputs.RELEASE }}
+          makeLatest: true
+          artifacts: ".pio/build/*/firmware.hex"
+          body: ${{ steps.set-release-name.outputs.RELEASE }}
