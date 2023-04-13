@@ -1,0 +1,35 @@
+name: Build Firmware
+on:
+  push:
+    paths:
+      - 'my-cr10s/marlin-configs/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio/.cache
+          key: ${{ runner.os }}-pio
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
+      - name: Set Marlin Version
+        id: set-marlin-version
+        run: echo "MARLIN_VERSION=$(cat my-cr10s/marlin-configs/marlin-version)" >> $GITHUB_OUTPUT
+      - name: actions/checkout@v3
+        with:
+          repository: MarlinFirmware/Marlin
+          ref: ${{ steps.set-marlin-version.outputs.MARLIN_VERSION }}
+          path: marlin
+      - name: copy-configs
+        run: cp -f my-cr10s/marlin-configs/ marlin/Marlin/
+      - name: Build PlatformIO
+        run: cd marlin && platformio run -e mega2560
+      - name: ls output
+        run: cd marlin && find .pio/build -ls
