@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PLATFORM: mega2560
+      PLATFORM: STM32G0B1RE_btt
     steps:
       - uses: actions/checkout@v3
       - name: Set Release Name
