@@ -34,6 +34,14 @@ jobs:
           repository: MarlinFirmware/Marlin
           ref: ${{ steps.set-marlin-version.outputs.MARLIN_VERSION }}
           path: marlin
+      - name: set custom version
+        run: |
+          echo '#pragma once' > my-cr10s/marlin-configs/Version.h
+          echo '#define DETAILED_BUILD_VERSION "${{ steps.set-release-name.outputs.RELEASE }}"' >> my-cr10s/marlin-configs/Version.h
+          echo "#define STRING_DISTRIBUTION_DATE \"$(date +%Y-%m-%d)\"" >> my-cr10s/marlin-configs/Version.h
+          echo '#define MACHINE_NAME "jantman-CR10S"' >> my-cr10s/marlin-configs/Version.h
+          echo '#define SOURCE_CODE_URL "github.com/jantman/3d-printed-things my-cr10s/marlin-configs"' >> my-cr10s/marlin-configs/Version.h
+          cat my-cr10s/marlin-configs/Version.h
       - name: copy-configs
         run: cp -f my-cr10s/marlin-configs/* marlin/Marlin/
       - name: Build PlatformIO
