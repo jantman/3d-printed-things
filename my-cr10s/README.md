@@ -15,6 +15,7 @@ My Creality CR-10S printer and related things.
   * Amplifier board docs: https://web.archive.org/web/20210725023757/https://e3d-online.dozuki.com/Wiki/E3D_PT100_Amplifier_Documentation
 * Genuine [ANTCLabs BLTouch Smart V3.1](https://www.antclabs.com/bltouch-v3) bed leveling sensor
 * [BigTreeTech SFS V1.0 Smart Filament Sensor](https://biqu.equipment/products/btt-sfs-v1-0-smart-filament-sensor-detection-stuck-blocking-filament-module?variant=31150666645602)
+* [BigTreeTech Direct TFT35 E3 V3.0.1 Display](https://biqu.equipment/products/btt-tft35-e3-v3-0-display-touch-screen-two-working-modes) ([docs](https://github.com/bigtreetech/BTT-TFT35-E3-V3.0))
 
 ## Hotend Wiring
 
@@ -24,18 +25,19 @@ My Creality CR-10S printer and related things.
 
 ## Motherboard Wiring
 
-* Stepper motors are connected as usual to (X|Y|ZA|ZB|E)M 4-pin headers
-* X/Y/Z limit switches are connected as usual to the corresponding (X|Y|Z)STOP 2-pin headers
-* +12V power in from the power supply is connected to the DCIN screw terminals. **Note** that from the factory, these are always a bit too short to easily remove the power supply to work on the board. I replaced the factory cables with custom ones of 16 AWG silicone-insulated wire, about 3 inches longer than factory, with spade tongue terminals crimped to the power supply end and ferrules on the board end.
-* **TBD:** "TH1" hotend temp sensor
-* Bed temperature sensor (TB) plugged in to "THB" header
-* Bed Heater leads to "HB" screw terminals
-* Hotend heater leads to "HE0" screw terminals
-* Part fan **TBD**
-* Extrufer fan **TBD**
-* Case fan **TBD**
+* Stepper motors are connected as usual to `(X|Y|ZA|ZB|E)M` 4-pin headers
+* X/Y/Z limit switches are connected as usual to the corresponding `(X|Y|Z)STOP` 2-pin headers
+* +12V power in from the power supply is connected to the `DCIN` screw terminals. **Note** that from the factory, these are always a bit too short to easily remove the power supply to work on the board. I replaced the factory cables with custom ones of 16 AWG silicone-insulated wire, about 3 inches longer than factory, with spade tongue terminals crimped to the power supply end and ferrules on the board end.
+* "TH1" hotend temp sensor **TBD**
+* Bed temperature sensor (TB) plugged in to `THB` header
+* Bed Heater leads to `HB` screw terminals
+* Hotend heater leads to `HE0` screw terminals
+* Part fan to `FAN0`
+* Extrufer fan to `FAN1`
+* Case fan to `FAN2`
 * BLTouch is connected to the "Z-Probe" 5-pin port on the board
-* Front panel display/control board **TBD**
+* Filament runout sensor is connected to **TBD**
+* Front panel display/control board - EXP3 on the display to EXP1 on the board
 * ~~Move jumper to right of `Neopixel 1` plug, for external DCDC5V mode.~~
 
 ## Contents
