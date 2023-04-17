@@ -2,6 +2,12 @@
 
 My Creality CR-10S printer and related things.
 
+## Contents
+
+* [marlin-configs/](marlin-configs/) - my Marlin configuration files
+* [models/](models/) - Complete 3D models of my printer and accessories. Unmaintained.
+* [tests-and-troubleshooting/](tests-and-troubleshooting/) - Various test models such as calibration cubes
+
 ## Printer Information
 
 * Creality CR-10S
@@ -40,8 +46,24 @@ My Creality CR-10S printer and related things.
 * Front panel display/control board - `EXP3` on the display to `EXP1` on the board
 * ~~Move jumper to right of `Neopixel 1` plug, for external DCDC5V mode.~~
 
-## Contents
+## BLTouch Setup
 
-* [marlin-configs/](marlin-configs/) - my Marlin configuration files
-* [models/](models/) - Complete 3D models of my printer and accessories. Unmaintained.
-* [tests-and-troubleshooting/](tests-and-troubleshooting/) - Various test models such as calibration cubes
+1. Send [M420](https://marlinfw.org/docs/gcode/M420.html) to turn off bed leveling.
+2. Send [M111 247](https://marlinfw.org/docs/gcode/M111.html) to turn on debug logging via the terminal.
+3. Send [G28](https://marlinfw.org/docs/gcode/G028.html) to auto-home.
+4. Send [G29](https://marlinfw.org/docs/gcode/G029.html) to begin bed leveling.
+5. Send [G29 P0](https://marlinfw.org/docs/gcode/G029.html) to zero the mesh data and then [G29 P1](https://marlinfw.org/docs/gcode/G029.html) to start Phase 1 bed leveling; this may take a while, as it probes up to 100 points.
+6. Send [G29 P3](https://marlinfw.org/docs/gcode/G029.html) to interpolate the rest of the points. Repeat as needed until the mesh is complete.
+7. Set the Z Offset using the Probe Offset Wizard in Marlin:
+    1. Heat build plate to 55 and nozzle to 210 (about average temperatures for me).
+    2. Use the Probe Offset Wizard on the LCD:
+        1. Go to Configuration – Advanced Settings – Probe Offsets – Z Prob Wizard
+        2. Select Move 0.1mm
+        3. Lower the z-axis by 0.1mm until you get to paper height from the build plate
+        4. Closeout of that Move 0.1mm window
+        5. Select Done
+    3. That gets me to a probe offset of **TBD**. Running `M503` confirms that: `Recv: echo:  M851 X-52.00 Y-4.00 Z-1.60 ; (mm)`
+    4. Ok, let's save those settings: [M500](https://marlinfw.org/docs/gcode/M500.html)
+8. Run `G29 S0` to save the mesh to the first storage slot.
+9. Home the machine ([G28](https://marlinfw.org/docs/gcode/G028.html)), set it back to relative positioning ([G91](https://marlinfw.org/docs/gcode/G091.html)), and try a test print. Maybe the best print to do is the Marlin built-in Mesh Validation pattern, which can be printed with [G26](https://marlinfw.org/docs/gcode/G026.html).
+10. Update OctoPrint and Cura scripts (see below). Install the [Bed Visualizer](https://plugins.octoprint.org/plugins/bedlevelvisualizer/) plugin in OctoPrint, update its GCode as shown below, and run it to see what your bed mesh looks like.
