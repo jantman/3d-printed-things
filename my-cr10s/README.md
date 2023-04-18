@@ -46,6 +46,25 @@ My Creality CR-10S printer and related things.
 * Front panel display/control board - `EXP3` on the display to `EXP1` on the board
 * ~~Move jumper to right of `Neopixel 1` plug, for external DCDC5V mode.~~
 
+### Analog Inputs
+
+PA0 - TH0 (4.7k pullup)
+PA1 - "SERVOS"
+PA2 - TX2 (TFT header)
+PA3 - RX2 (TFT header)
+PA4 - CD-CS (SD card)
+PA5 - SPI1-SCK (shared between SPI1 and SD card)
+PA6 - SPI1-MISO (shared between SPI1 and SD card)
+PA7 - SPI1-MOSI (shared between SPI1 and SD card)
+PA8 - Neopixel
+PA9 - TX1 (EXP1 for display)
+PA10 - RX1 (EXP1 for display)
+PA11 (PA9) - USB N
+PA12 (PA10) - USB P
+PA13 - SWDIO (J11 "SWD"; 10k pullup)
+PA14 (BOOT0) - SWCLK (J11 "SWD"; 10k pulldown)
+PA15 - BTN-ENC (EXP1 pin 9; display button/rotary encoder)
+
 ## BLTouch Setup
 
 1. Send [M420](https://marlinfw.org/docs/gcode/M420.html) to turn off bed leveling.
