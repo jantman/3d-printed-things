@@ -549,6 +549,8 @@
  * With TEMP_SENSOR_0 20, we immediately get a MAXTEMP error on boot.
  */
 #define TEMP_0_PIN PA2 // Analog Input "TX2" on 5-pin TFT header
+// this is for DEBUGGING ONLY to try and figure out what's going on
+#define BOGUS_TEMPERATURE_FAILSAFE_OVERRIDE
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
