@@ -539,6 +539,14 @@
  *
  */
 #define TEMP_SENSOR_0 20
+/* We're using a PT100 through the E3D amplifier board; this requires
+ * an analog input without a pullup resistor. The stock temperature
+ * sensor input (TH0 / PA0) has a pullup on it, as does THB / PC4.
+ *
+ * So, for this we'll use PA2 which is currently unused, and is
+ * allocated to TX2, pin 3 on the 5-pin TFT display header.
+ */
+#define TEMP_0_PIN PA2 // Analog Input "TX2" on 5-pin TFT header
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0

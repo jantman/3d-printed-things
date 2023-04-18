@@ -34,7 +34,7 @@ My Creality CR-10S printer and related things.
 * Stepper motors are connected as usual to `(X|Y|ZA|ZB|E)M` 4-pin headers
 * X/Y/Z limit switches are connected as usual to the corresponding `(X|Y|Z)STOP` 2-pin headers
 * +12V power in from the power supply is connected to the `DCIN` screw terminals. **Note** that from the factory, these are always a bit too short to easily remove the power supply to work on the board. I replaced the factory cables with custom ones of 16 AWG silicone-insulated wire, about 3 inches longer than factory, with spade tongue terminals crimped to the power supply end and ferrules on the board end.
-* "TH1" hotend temp sensor plugged in to E3D amplifier board. Amplifier board + and - wired to 3.3V and GND pins of SPI1 header. Amplifier board signal wired to TH0 right pin (PA0).
+* "TH1" hotend temp sensor plugged in to E3D amplifier board. Amplifier board + and - wired to 3.3V and GND pins of SPI1 header. Amplifier board signal wired to TX2, which is pin 3 (middle pin) of the 5-pin "TFT" display header.
 * Bed temperature sensor (TB) plugged in to `THB` header
 * Bed Heater leads to `HB` screw terminals
 * Hotend heater leads to `HE0` screw terminals
