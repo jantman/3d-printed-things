@@ -61,7 +61,7 @@ My Creality CR-10S printer and related things.
 
 PA0 - TH0 (4.7k pullup)
 PA1 - "SERVOS"
-PA2 - TX2 (TFT header)
+PA2 - TX2 (TFT header) - now used for MAX31865 CS pin
 PA3 - RX2 (TFT header)
 PA4 - CD-CS (SD card)
 PA5 - SPI1-SCK (shared between SPI1 and SD card)
