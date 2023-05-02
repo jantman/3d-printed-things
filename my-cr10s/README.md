@@ -54,7 +54,7 @@ My Creality CR-10S printer and related things.
     * CLK to SPI1 CLK
     * SDO to SPI1 MISO
     * SDI to SPI1 MOSI
-    * CS to PS-ON PC-13
+    * CS to TX2 (PA2; middle pin on TFT header)
 * Neopixel1 wired to an external pigtail
 
 ### Analog Inputs

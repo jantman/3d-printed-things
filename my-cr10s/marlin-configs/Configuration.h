@@ -539,8 +539,7 @@
  *
  */
 #define TEMP_SENSOR_0 -5
-#undef PS_ON_PIN
-#define TEMP_0_CS_PIN PC13
+#define TEMP_0_CS_PIN PA2
 // this is for DEBUGGING ONLY to try and figure out what's going on
 #define BOGUS_TEMPERATURE_GRACE_PERIOD 0
 #define TEMP_SENSOR_1 0
