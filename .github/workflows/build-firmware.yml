@@ -43,7 +43,7 @@ jobs:
           echo '#define SOURCE_CODE_URL "github.com/jantman/3d-printed-things my-cr10s/marlin-configs"' >> my-cr10s/marlin-configs/Version.h
           cat my-cr10s/marlin-configs/Version.h
       - name: copy-configs
-        run: cp -f my-cr10s/marlin-configs/* marlin/Marlin/
+        run: cp -fv my-cr10s/marlin-configs/* marlin/Marlin/
       - name: Build PlatformIO
         run: cd marlin && platformio run -e ${{ env.PLATFORM }}
       - name: ls output
