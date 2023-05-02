@@ -52,9 +52,18 @@ jobs:
       - name: ls output
         run: cd marlin && find .pio/build -ls
       - name: Create Release
+        if: github.ref_name == 'master'
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.set-release-name.outputs.RELEASE }}
           makeLatest: true
           artifacts: "marlin/.pio/build/**/firmware.bin,marlin/.pio/build/**/config.ini"
           body: ${{ steps.set-release-name.outputs.RELEASE }}
+      - name: Archive Output
+        if: github.ref_name != 'master'
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-result
+          path: |
+            marlin/.pio/build/**/firmware.bin
+            marlin/.pio/build/**/config.ini
