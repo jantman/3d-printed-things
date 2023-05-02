@@ -1,0 +1,26 @@
+diff --git a/Marlin/src/libs/MAX31865.h b/Marlin/src/libs/MAX31865.h
+index 95bde756ce..d2fdadaec3 100644
+--- a/Marlin/src/libs/MAX31865.h
++++ b/Marlin/src/libs/MAX31865.h
+@@ -41,7 +41,7 @@
+  */
+ #pragma once
+ 
+-//#define DEBUG_MAX31865
++#define DEBUG_MAX31865
+ 
+ #include "../inc/MarlinConfig.h"
+ #include "../HAL/shared/Delay.h"
+diff --git a/Marlin/src/module/temperature.cpp b/Marlin/src/module/temperature.cpp
+index fb3953841b..20fd0e977f 100644
+--- a/Marlin/src/module/temperature.cpp
++++ b/Marlin/src/module/temperature.cpp
+@@ -25,7 +25,7 @@
+  */
+ 
+ // Useful when debugging thermocouples
+-//#define IGNORE_THERMOCOUPLE_ERRORS
++#define IGNORE_THERMOCOUPLE_ERRORS
+ 
+ #include "../MarlinCore.h"
+ #include "../HAL/shared/Delay.h"

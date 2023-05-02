@@ -34,6 +34,9 @@ jobs:
           repository: MarlinFirmware/Marlin
           ref: ${{ steps.set-marlin-version.outputs.MARLIN_VERSION }}
           path: marlin
+      - name: Apply Patch if Present
+        if: hashFiles('my-cr10s/marlin-configs/marlin.patch') != ''
+        run: cd marlin/ && git apply ../my-cr10s/marlin-configs/marlin.patch
       - name: set custom version
         run: |
           echo '#pragma once' > my-cr10s/marlin-configs/Version.h
