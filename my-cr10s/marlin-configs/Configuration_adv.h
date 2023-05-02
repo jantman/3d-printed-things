@@ -174,8 +174,8 @@
 /**
  * Thermocouple Options — for MAX6675 (-2), MAX31855 (-3), and MAX31865 (-5).
  */
-//#define TEMP_SENSOR_0_FORCE_HW_SPI                // Ignore SCK/MOSI/MISO pins; use CS and the default SPI bus.
-//#define TEMP_SENSOR_FORCE_HW_SPI
+#define TEMP_SENSOR_0_FORCE_HW_SPI                // Ignore SCK/MOSI/MISO pins; use CS and the default SPI bus.
+#define TEMP_SENSOR_FORCE_HW_SPI
 #define MAX31865_SENSOR_WIRES_0 2               // (2-4) Number of wires for the probe connected to a MAX31865 board.
 //#define MAX31865_SENSOR_WIRES_1 2
 //#define MAX31865_SENSOR_WIRES_2 2
