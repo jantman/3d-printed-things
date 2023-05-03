@@ -543,8 +543,6 @@
 #define TEMP_0_SCK_PIN PA5
 #define TEMP_0_MISO_PIN PA6
 #define TEMP_0_MOSI_PIN PA7
-// this is for DEBUGGING ONLY to try and figure out what's going on
-#define BOGUS_TEMPERATURE_GRACE_PERIOD 0
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
