@@ -1711,7 +1711,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS 319 // 15mm Extra space on the right end
 #define Y_MAX_POS 306 // 4mm Extra space behind the bed
-#define Z_MAX_POS 400
+#define Z_MAX_POS 320 // bowden tube with feed on back of gantry
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
