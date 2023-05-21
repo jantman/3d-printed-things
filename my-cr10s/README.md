@@ -77,7 +77,7 @@ PA15 - BTN-ENC (EXP1 pin 9; display button/rotary encoder)
 
 ## BLTouch Setup
 
-1. Send [M420](https://marlinfw.org/docs/gcode/M420.html) to turn off bed leveling.
+1. Send [M420](https://marlinfw.org/docs/gcode/M420.html) S0 to turn off bed leveling.
 2. Send [M111 247](https://marlinfw.org/docs/gcode/M111.html) to turn on debug logging via the terminal.
 3. Send [G28](https://marlinfw.org/docs/gcode/G028.html) to auto-home.
 4. Send [G29](https://marlinfw.org/docs/gcode/G029.html) to begin bed leveling.
