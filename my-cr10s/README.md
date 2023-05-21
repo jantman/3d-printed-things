@@ -58,6 +58,7 @@ My Creality CR-10S printer and related things.
 
 ### Analog Inputs
 
+```
 PA0 - TH0 (4.7k pullup)
 PA1 - "SERVOS"
 PA2 - TX2 (TFT header) - now used for MAX31865 CS pin
@@ -74,6 +75,7 @@ PA12 (PA10) - USB P
 PA13 - SWDIO (J11 "SWD"; 10k pullup)
 PA14 (BOOT0) - SWCLK (J11 "SWD"; 10k pulldown)
 PA15 - BTN-ENC (EXP1 pin 9; display button/rotary encoder)
+```
 
 ## BLTouch Setup
 
