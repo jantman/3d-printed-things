@@ -91,7 +91,7 @@ PA15 - BTN-ENC (EXP1 pin 9; display button/rotary encoder)
         3. Lower the z-axis by 0.1mm until you get to paper height from the build plate
         4. Closeout of that Move 0.1mm window
         5. Select Done
-    3. That gets me to a probe offset of **TBD**. Running `M503` confirms that: `Recv: echo:  M851 X-52.00 Y-4.00 Z-1.60 ; (mm)`
+    3. That gets me to a probe offset of -0.25. Running `M503` confirms that: `Recv: echo:  M851 X-44.00 Y-9.00 Z-0.25 ; (mm)`
     4. Ok, let's save those settings: [M500](https://marlinfw.org/docs/gcode/M500.html)
 8. Run `G29 S0` to save the mesh to the first storage slot.
 9. Home the machine ([G28](https://marlinfw.org/docs/gcode/G028.html)), set it back to relative positioning ([G91](https://marlinfw.org/docs/gcode/G091.html)), and try a test print. Maybe the best print to do is the Marlin built-in Mesh Validation pattern, which can be printed with [G26](https://marlinfw.org/docs/gcode/G026.html).
