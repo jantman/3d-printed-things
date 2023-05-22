@@ -104,3 +104,84 @@ PA15 - BTN-ENC (EXP1 pin 9; display button/rotary encoder)
 * Hotend PID tuning ([docs](https://all3dp.com/2/3d-printer-pid-tuning/)) - `M303 E0 S210 C10` - then `M500` to save and update firmware with result
 * Bed PID tuning ([docs](https://all3dp.com/2/3d-printer-pid-tuning/)) - `M303 EBED S55 C10` - then `M500` to save and update firmware with result
 * After updating firmware, confirm result with `M503`
+
+## Cura Profile
+
+`~/.local/share/cura/5.3/user/Creality+CR-10S+Default_user.inst.cfg`
+
+```ini
+[general]
+version = 4
+name = Creality CR-10S Default_user
+definition = creality_cr10s
+
+[metadata]
+type = user
+setting_version = 21
+machine = Creality CR-10S Default
+
+[values]
+adhesion_type = raft
+layer_height = 0.4
+material_bed_temperature = 50.0
+```
+
+`~/.local/share/cura/5.3/machine_instances/Creality+CR-10S+Default.global.cfg`
+
+```ini
+[general]
+version = 5
+name = Creality CR-10S Default
+id = Creality CR-10S Default
+
+[metadata]
+setting_version = 21
+type = machine
+group_id = 8a30d067-e773-4ade-9559-8249b204fafc
+post_processing_scripts = 
+
+[containers]
+0 = Creality CR-10S Default_user
+1 = empty_quality_changes
+2 = empty_intent
+3 = base_global_standard
+4 = empty_material
+5 = empty_variant
+6 = Creality CR-10S Default_settings
+7 = creality_cr10s
+```
+
+`~/.local/share/cura/5.3/definition_changes/Creality+CR-10S+Default_settings.inst.cfg`
+
+```ini
+[general]
+version = 4
+name = Creality CR-10S Default_settings
+definition = creality_cr10s
+
+[metadata]
+type = definition_changes
+setting_version = 21
+
+[values]
+extruders_enabled_count = 1
+machine_start_gcode = M201 X500.00 Y500.00 Z100.00 E5000.00 ;Setup machine max acceleration
+        M203 X500.00 Y500.00 Z10.00 E50.00 ;Setup machine max feedrate
+        M204 P500.00 R1000.00 T500.00 ;Setup Print/Retract/Travel acceleration
+        M205 X8.00 Y8.00 Z0.40 E5.00 ;Setup Jerk
+        M220 S100 ;Reset Feedrate
+        M221 S100 ;Reset Flowrate
+
+        M280 P0 S160 ;reset bltouch
+        G28 ;Home
+        G29 A ; enable UBL
+        G92 E0 ;Reset Extruder
+        G1 Z2.0 F3000 ;Move Z Axis up
+        G1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position
+        G1 X10.1 Y200.0 Z0.28 F1500.0 E15 ;Draw the first line
+        G1 X10.4 Y200.0 Z0.28 F5000.0 ;Move to side a little
+        G1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line
+        G92 E0 ;Reset Extruder
+        G1 Z2.0 F3000 ;Move Z Axis up
+
+```
