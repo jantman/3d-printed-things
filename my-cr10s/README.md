@@ -98,3 +98,9 @@ PA15 - BTN-ENC (EXP1 pin 9; display button/rotary encoder)
 8. Run `G29 S0` to save the mesh to the first storage slot.
 9. Home the machine ([G28](https://marlinfw.org/docs/gcode/G028.html)), set it back to relative positioning ([G91](https://marlinfw.org/docs/gcode/G091.html)), and try a test print. Maybe the best print to do is the Marlin built-in Mesh Validation pattern, which can be printed with [G26](https://marlinfw.org/docs/gcode/G026.html).
 10. Update OctoPrint and Cura scripts (see below). Install the [Bed Visualizer](https://plugins.octoprint.org/plugins/bedlevelvisualizer/) plugin in OctoPrint, update its GCode as shown below, and run it to see what your bed mesh looks like.
+
+## Tuning Information
+
+* Hotend PID tuning ([docs](https://all3dp.com/2/3d-printer-pid-tuning/)) - `M303 E0 S210 C10` - then `M500` to save and update firmware with result
+* Bed PID tuning ([docs](https://all3dp.com/2/3d-printer-pid-tuning/)) - `M303 EBED S55 C10` - then `M500` to save and update firmware with result
+* After updating firmware, confirm result with `M503`
