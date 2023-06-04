@@ -1175,7 +1175,8 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 79.52, 400, 139.78 }
+// formula for axis calibration with 20mm cube is: Steps = 20 * (current value) / measurement
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 79.44, 79.52, 397.02, 139.78 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1491,7 +1492,7 @@
  *     O-- FRONT --+
  */
 // got these offsets from: https://www.th3dstudio.com/hc/guides/upgrades-printer-information/creality-bl-touch-probe-mount-offsets-metal-bracket/
-#define NOZZLE_TO_PROBE_OFFSET { -44, -9, -2.63}
+#define NOZZLE_TO_PROBE_OFFSET { -44, -9, -2.60}
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
