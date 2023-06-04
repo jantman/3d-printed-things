@@ -22,6 +22,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [air-connector-dust-cover/](air-connector-dust-cover/) - A dust cover for standard 1/4" Industrial (a.k.a "I/M" or "Milton M-style" or "Type D") air tool connectors.
 
+## Cabinet Spacer
+
+[cabinet-spacer/](cabinet-spacer/) - Spacer for assembling cabinets that need a 9/16" gap maintained between them.
+
 ## Dremel Grinding Stone Holder
 
 [dremel-grinding-stone-holder/](dremel-grinding-stone-holder/) - A block with holes in it, to hold a set of 56 1/8" (3mm) shaft grinding stones, such as for a Dremel tool. Designed for stones up to 12mm (~1/2") diameter.
