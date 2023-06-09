@@ -9,9 +9,9 @@
 ;MAXY:197.4
 ;MAXZ:25.4
 ;Generated with Cura_SteamEngine 5.3.0
-M140 S50
+M140 S60
 M105
-M190 S50
+M190 S60
 M104 S210
 M105
 M109 S210
@@ -87370,9 +87370,9 @@ M104 S0
 ;SETTING_3 {"global_quality": "[general]\\nversion = 4\\nname = Standard Quality
 ;SETTING_3  #3\\ndefinition = creality_cr10s\\n\\n[metadata]\\ntype = quality_ch
 ;SETTING_3 anges\\nquality_type = standard\\nsetting_version = 21\\n\\n[values]\
-;SETTING_3 \nadhesion_type = brim\\n\\n", "extruder_quality": ["[general]\\nvers
-;SETTING_3 ion = 4\\nname = Standard Quality #3\\ndefinition = creality_cr10s\\n
-;SETTING_3 \\n[metadata]\\ntype = quality_changes\\nquality_type = standard\\nse
-;SETTING_3 tting_version = 21\\nposition = 0\\n\\n[values]\\ninfill_sparse_densi
-;SETTING_3 ty = 40.0\\nmaterial_print_temperature = 210.0\\nretraction_amount = 
-;SETTING_3 1.5\\nretraction_speed = 35\\n\\n"]}
+;SETTING_3 \nadhesion_type = brim\\nmaterial_bed_temperature = 60\\n\\n", "extru
+;SETTING_3 der_quality": ["[general]\\nversion = 4\\nname = Standard Quality #3\
+;SETTING_3 \ndefinition = creality_cr10s\\n\\n[metadata]\\ntype = quality_change
+;SETTING_3 s\\nquality_type = standard\\nsetting_version = 21\\nposition = 0\\n\
+;SETTING_3 \n[values]\\ninfill_sparse_density = 40.0\\nmaterial_print_temperatur
+;SETTING_3 e = 210.0\\nretraction_amount = 1.5\\nretraction_speed = 35\\n\\n"]}
