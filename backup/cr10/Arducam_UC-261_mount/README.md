@@ -5,3 +5,9 @@ Camera mount for the Arducam UC-261 to use with the mounting system on [CR10 Cam
 [![Rendering of 3d model](arducam_mount-sm.png)](arducam_mount.png)
 
 [![photo of mount](mount_photo-sm.jpg)](mount_photo.jpg)
+
+## Vertical Adjustment
+
+These additional pieces allow for vertical adjustment of the camera.
+
+[![rendering of backplate and mounting bar](backplate_and_bar-sm.png)](backplate_and_bar.png)
