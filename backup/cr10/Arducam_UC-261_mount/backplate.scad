@@ -33,11 +33,11 @@ module backplate() {
       }
     }
     difference() {
-      translate([(width - backplate_block_width) / 2, -1 * backplate_block_depth - 0.05, 0.1]) {
+      translate([(width - backplate_block_width) / 2, (-1 * backplate_block_depth) + channel_padding, 0.1]) {
         cube([backplate_block_width, backplate_block_depth + 0.1, height - 0.2]);
       }
       translate([(width / 2) + (channel_width / 4), 0, 0]) {
-        channel(rot=180, channel_padding=0.1);
+        channel(rot=180, use_padding=1);
       }
       // holes for threaded inserts
       translate([(width / 2) + (channel_width / 2) - 0.5, -1 * (channel_rib_depth / 2) - 0.2, height / 4]) {

@@ -1,7 +1,8 @@
 use <backplate.scad>
 use <mounting_bar.scad>
+include <config.scad>
 
 backplate();
-translate([0, 0, 7]) {
+translate([-1 * channel_padding, -1 * channel_padding, 7]) {
     mounting_bar();
 }

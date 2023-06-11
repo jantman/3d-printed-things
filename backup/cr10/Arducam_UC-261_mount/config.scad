@@ -12,6 +12,7 @@ channel_width = 8;
 channel_rib_width = 4;
 channel_depth = 6;
 channel_rib_depth = 3;
+channel_padding = 0.15;
 
 backplate_block_width = channel_width * 1.5;
 backplate_block_depth = channel_depth;
