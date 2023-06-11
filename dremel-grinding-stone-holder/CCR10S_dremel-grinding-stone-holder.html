@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+            <meta charset='UTF-8'>
+            <head>
+                <title>Cura Settings Export</title>
+                <style>
+                    tr.category td { font-size: 1.1em; background-color: rgb(142,170,219); }
+                    tr.disabled td { background-color: #eaeaea; color: #717171; }
+                    tr.local td { background-color: #77DD77; }
+                    body.hide-disabled tr.disabled { display: none; }
+                    body.hide-local tr.normal { display: none; }
+                    .val { width: 200px; text-align: right; }
+                    .w-10 { width: 10%; }
+                    .w-50 { width: 50%; }
+                    .w-70 { width: 70%; }
+                    .pl-l { padding-left: 20px; }
+                    .pl-2 { padding-left: 40px; }
+                    .pl-3 { padding-left: 60px; }
+                    .pl-4 { padding-left: 80px; }
+                    .pl-5 { padding-left: 100px; }
+                </style>
+            </head>
+            <body lang=EN>
+        
+<h1>Print settings</h1>
+<button id='enabled'>Visible settings</button><P>
+<button id='local'>Custom selection</button><P>
+<script>
+                            var enabled = document.getElementById('enabled');
+                            enabled.addEventListener('click', function() {
+                                document.body.classList.toggle('hide-disabled');
+                            });
+                        </script>
+<script>
+                            var local = document.getElementById('local');
+                            local.addEventListener('click', function() {
+                                document.body.classList.toggle('hide-local');
+                            });
+                        </script>
+<table width='100%' border='1' cellpadding='3'><tr><td class='w-50'>Job Name</td><td colspan='2'>CCR10S_dremel-grinding-stone-holder</td></tr>
+<tr><td colspan='3'><center><img src='data:image/png;base64,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' width='300' height='300' alt='CCR10S_dremel-grinding-stone-holder' title='CCR10S_dremel-grinding-stone-holder' /></cente></td></tr><tr><td class='w-50'>Date</td><td colspan='2'>10/06/2023 20:43:30</td></tr>
+<tr><td class='w-50'>Os</td><td colspan='2'>Linux #1 SMP PREEMPT_DYNAMIC Thu, 13 Apr 2023 16:59:24 +0000</td></tr>
+<tr><td class='w-50'>Cura Version</td><td colspan='2'>5.3.0</td></tr>
+<tr><td class='w-50'>Intent</td><td colspan='2'>default</td></tr>
+<tr><td class='w-50'>Quality</td><td colspan='2'>Standard Quality</td></tr>
+<tr><td class='w-50'>Material Extruder : 1</td><td colspan='2'>PLA</td></tr>
+<tr><td class='w-50'>Material estimation</td><td colspan='2'>44.3 g</td></tr>
+<tr><td class='w-50'>Material usage</td><td colspan='2'>14.84 m</td></tr>
+<tr><td class='w-50'>Filament Cost</td><td colspan='2'>0.0 €</td></tr>
+<tr><td class='w-50'>Printing Time</td><td colspan='2'>0 D 6 H 2 Mn</td></tr>
+<tr class='category'><td colspan='3'>Quality</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Layer Height</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Layer Height</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Wall Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Outer Wall Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Inner Wall(s) Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Top/Bottom Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Infill Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Skirt/Brim Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Interface Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Roof Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Floor Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Prime Tower Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Layer Line Width</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='category'><td colspan='3'>Walls</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wall Extruder</td><td class='val'>-1</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Outer Wall Extruder</td><td class='val'>-1</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Inner Wall Extruder</td><td class='val'>-1</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wall Thickness</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Wall Line Count</td><td class='val'>2</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wall Transition Length</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wall Distribution Count</td><td class='val'>1</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wall Transitioning Threshold Angle</td><td class='val'>10</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wall Transitioning Filter Distance</td><td class='val'>100</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wall Transitioning Filter Margin</td><td class='val'>0.1</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Outer Wall Wipe Distance</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Outer Wall Inset</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Optimize Wall Printing Order</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wall Ordering</td><td class='val'>Inside To Outside</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Alternate Extra Wall</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Minimum Wall Line Width</td><td class='val'>0.34</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Minimum Even Wall Line Width</td><td class='val'>0.34</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Minimum Odd Wall Line Width</td><td class='val'>0.34</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Print Thin Walls</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Minimum Feature Size</td><td class='val'>0.1</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Minimum Thin Wall Line Width</td><td class='val'>0.34</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Horizontal Expansion</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Layer Horizontal Expansion</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Hole Horizontal Expansion</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Z Seam Alignment</td><td class='val'>User Specified</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Z Seam Position</td><td class='val'>Back</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Z Seam X</td><td class='val'>150</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Z Seam Y</td><td class='val'>300</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Seam Corner Preference</td><td class='val'>Smart Hiding</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Z Seam Relative</td><td class='val'>False</td><td class='w-10'>mm</td></tr>
+<tr class='category'><td colspan='3'>Top/Bottom</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Top Surface Skin Extruder</td><td class='val'>-1</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Top Surface Skin Layers</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top Surface Skin Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top Surface Skin Pattern</td><td class='val'>Lines</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Monotonic Top Surface Order</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top Surface Skin Line Directions</td><td class='val'>[ ]</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Top/Bottom Extruder</td><td class='val'>-1</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Top/Bottom Thickness</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Top Thickness</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Top Layers</td><td class='val'>4</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Bottom Thickness</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Bottom Layers</td><td class='val'>4</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Initial Bottom Layers</td><td class='val'>4</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Top/Bottom Pattern</td><td class='val'>Lines</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Bottom Pattern Initial Layer</td><td class='val'>Lines</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Connect Top/Bottom Polygons</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Monotonic Top/Bottom Order</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Top/Bottom Line Directions</td><td class='val'>[ ]</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>No Skin in Z Gaps</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extra Skin Wall Count</td><td class='val'>1</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Ironing</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Iron Only Highest Layer</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Ironing Pattern</td><td class='val'>Zig Zag</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Monotonic Ironing Order</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Ironing Line Spacing</td><td class='val'>0.1</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Ironing Flow</td><td class='val'>10</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Ironing Inset</td><td class='val'>0.38</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Ironing Speed</td><td class='val'>16.6667</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Ironing Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Ironing Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Skin Overlap Percentage</td><td class='val'>10</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Skin Overlap</td><td class='val'>0.04</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Skin Removal Width</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Top Skin Removal Width</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Bottom Skin Removal Width</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Skin Expand Distance</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Top Skin Expand Distance</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Bottom Skin Expand Distance</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Skin Angle for Expansion</td><td class='val'>90</td><td class='w-10'>°</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Minimum Skin Width for Expansion</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='category'><td colspan='3'>Infill</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Infill Extruder</td><td class='val'>-1</td><td class='w-10'></td></tr>
+<tr class='local'><td class='w-70 pl-0'>Infill Density</td><td class='val'>20</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Infill Line Distance</td><td class='val'>6</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Pattern</td><td class='val'>Cubic</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Connect Infill Lines</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Connect Infill Polygons</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Line Directions</td><td class='val'>[ ]</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill X Offset</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Y Offset</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Randomize Infill Start</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Line Multiplier</td><td class='val'>1</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extra Infill Wall Count</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Cubic Subdivision Shell</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Overlap Percentage</td><td class='val'>30</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Infill Overlap</td><td class='val'>0.12</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Wipe Distance</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Layer Thickness</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Gradual Infill Steps</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Gradual Infill Step Height</td><td class='val'>1.5</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Before Walls</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Minimum Infill Area</td><td class='val'>0</td><td class='w-10'>mm²</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Support</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Infill Overhang Angle</td><td class='val'>40</td><td class='w-10'>°</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Skin Edge Support Thickness</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Skin Edge Support Layers</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Lightning Infill Support Angle</td><td class='val'>40</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Lightning Infill Overhang Angle</td><td class='val'>40</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Lightning Infill Prune Angle</td><td class='val'>40</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Lightning Infill Straightening Angle</td><td class='val'>40</td><td class='w-10'>°</td></tr>
+<tr class='category'><td colspan='3'>Material</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Default Printing Temperature</td><td class='val'>200</td><td class='w-10'>°C</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Build Volume Temperature</td><td class='val'>28</td><td class='w-10'>°C</td></tr>
+<tr class='local'><td class='w-70 pl-0'>Printing Temperature</td><td class='val'>210</td><td class='w-10'>°C</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Printing Temperature Initial Layer</td><td class='val'>210</td><td class='w-10'>°C</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Printing Temperature</td><td class='val'>210</td><td class='w-10'>°C</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Final Printing Temperature</td><td class='val'>210</td><td class='w-10'>°C</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Extrusion Cool Down Speed Modifier</td><td class='val'>0.7</td><td class='w-10'>°C/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Default Build Plate Temperature</td><td class='val'>50</td><td class='w-10'>°C</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Build Plate Temperature</td><td class='val'>60</td><td class='w-10'>°C</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Build Plate Temperature Initial Layer</td><td class='val'>60</td><td class='w-10'>°C</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Adhesion Tendency</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Surface Energy</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Scaling Factor Shrinkage Compensation</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Horizontal Scaling Factor Shrinkage Compensation</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Vertical Scaling Factor Shrinkage Compensation</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Crystalline Material</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Anti-ooze Retracted Position</td><td class='val'>-4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Anti-ooze Retraction Speed</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Break Preparation Retracted Position</td><td class='val'>-16</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Break Preparation Retraction Speed</td><td class='val'>2</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Break Preparation Temperature</td><td class='val'>210</td><td class='w-10'>°C</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Break Retracted Position</td><td class='val'>-50</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Break Retraction Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Break Temperature</td><td class='val'>50</td><td class='w-10'>°C</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Flush Purge Speed</td><td class='val'>0.5</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Flush Purge Length</td><td class='val'>60</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>End of Filament Purge Speed</td><td class='val'>0.5</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>End of Filament Purge Length</td><td class='val'>20</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Maximum Park Duration</td><td class='val'>300</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>No Load Move Factor</td><td class='val'>0.9409</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Wall Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Outer Wall Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Inner Wall(s) Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Top/Bottom Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top Surface Skin Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Infill Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Skirt/Brim Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Interface Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Roof Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Floor Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Prime Tower Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Layer Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Layer Inner Wall Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Layer Outer Wall Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Layer Bottom Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Standby Temperature</td><td class='val'>180</td><td class='w-10'>°C</td></tr>
+<tr class='category'><td colspan='3'>Speed</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Print Speed</td><td class='val'>50</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Infill Speed</td><td class='val'>50</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Wall Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Outer Wall Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-2'>Inner Wall Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top Surface Skin Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Top/Bottom Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Infill Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Interface Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-3'>Support Roof Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-3'>Support Floor Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Prime Tower Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Travel Speed</td><td class='val'>150</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Layer Speed</td><td class='val'>20</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Initial Layer Print Speed</td><td class='val'>20</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Initial Layer Travel Speed</td><td class='val'>100</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Skirt/Brim Speed</td><td class='val'>20</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Z Hop Speed</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Number of Slower Layers</td><td class='val'>2</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Flow Equalization Ratio</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Acceleration Control</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Enable Travel Acceleration</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Print Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Infill Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Wall Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Outer Wall Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Inner Wall Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top Surface Skin Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top/Bottom Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Infill Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Interface Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-3'>Support Roof Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-3'>Support Floor Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Prime Tower Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Travel Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Initial Layer Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Initial Layer Print Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Initial Layer Travel Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Skirt/Brim Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Jerk Control</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Enable Travel Jerk</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Print Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Infill Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Wall Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Outer Wall Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Inner Wall Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top Surface Skin Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Top/Bottom Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Infill Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Interface Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-3'>Support Roof Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-3'>Support Floor Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Prime Tower Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Travel Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Initial Layer Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Initial Layer Print Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Initial Layer Travel Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Skirt/Brim Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='category'><td colspan='3'>Travel</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Retraction</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Retract at Layer Change</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='local'><td class='w-70 pl-0'>Retraction Distance</td><td class='val'>1.5</td><td class='w-10'>mm</td></tr>
+<tr class='local'><td class='w-70 pl-0'>Retraction Speed</td><td class='val'>35</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Retraction Retract Speed</td><td class='val'>35</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Retraction Prime Speed</td><td class='val'>35</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Retraction Extra Prime Amount</td><td class='val'>0</td><td class='w-10'>mm³</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Retraction Minimum Travel</td><td class='val'>1.5</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Retraction Count</td><td class='val'>100</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Minimum Extrusion Distance Window</td><td class='val'>10</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Combing Mode</td><td class='val'>Not in Skin</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Max Comb Distance With No Retract</td><td class='val'>30</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Retract Before Outer Wall</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Avoid Printed Parts When Traveling</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Avoid Supports When Traveling</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Travel Avoid Distance</td><td class='val'>0.625</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Layer Start X</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Layer Start Y</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Z Hop When Retracted</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Z Hop Only Over Printed Parts</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Z Hop Height</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Z Hop After Extruder Switch</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Z Hop After Extruder Switch Height</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='category'><td colspan='3'>Cooling</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Print Cooling</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Fan Speed</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Regular Fan Speed</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Maximum Fan Speed</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Regular/Maximum Fan Speed Threshold</td><td class='val'>10</td><td class='w-10'>s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Initial Fan Speed</td><td class='val'>0</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Regular Fan Speed at Height</td><td class='val'>0.6</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Regular Fan Speed at Layer</td><td class='val'>4</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Minimum Layer Time</td><td class='val'>10</td><td class='w-10'>s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Minimum Speed</td><td class='val'>10</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Lift Head</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Small Layer Printing Temperature</td><td class='val'>210</td><td class='w-10'>°C</td></tr>
+<tr class='category'><td colspan='3'>Support</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Generate Support</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Infill Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>First Layer Support Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Interface Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Roof Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Floor Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Structure</td><td class='val'>Normal</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Tree Support Branch Angle</td><td class='val'>40</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Tree Support Branch Distance</td><td class='val'>1</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Tree Support Branch Diameter</td><td class='val'>2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Tree Support Trunk Diameter</td><td class='val'>15</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Tree Support Branch Diameter Angle</td><td class='val'>5</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Tree Support Collision Resolution</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Placement</td><td class='val'>Everywhere</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Overhang Angle</td><td class='val'>45</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Pattern</td><td class='val'>Zig Zag</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Wall Line Count</td><td class='val'>1</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Interface Wall Line Count</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Roof Wall Line Count</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Bottom Wall Line Count</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Connect Support Lines</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Connect Support ZigZags</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Density</td><td class='val'>20</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Line Distance</td><td class='val'>2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Initial Layer Support Line Distance</td><td class='val'>2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Infill Line Directions</td><td class='val'>[ ]</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Enable Support Brim</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Brim Width</td><td class='val'>4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Brim Line Count</td><td class='val'>10</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Z Distance</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Top Distance</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Bottom Distance</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support X/Y Distance</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Distance Priority</td><td class='val'>X/Y overrides Z</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Minimum Support X/Y Distance</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Stair Step Height</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Stair Step Maximum Width</td><td class='val'>5</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Stair Step Minimum Slope Angle</td><td class='val'>10</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Join Distance</td><td class='val'>2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Horizontal Expansion</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Infill Layer Thickness</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Gradual Support Infill Steps</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Gradual Support Infill Step Height</td><td class='val'>1</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Minimum Support Area</td><td class='val'>2</td><td class='w-10'>mm²</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Enable Support Interface</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Enable Support Roof</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Enable Support Floor</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Interface Thickness</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Roof Thickness</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Floor Thickness</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Interface Resolution</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Interface Density</td><td class='val'>33.333</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Roof Density</td><td class='val'>33.333</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Roof Line Distance</td><td class='val'>2.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Floor Density</td><td class='val'>33.333</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-2'>Support Floor Line Distance</td><td class='val'>2.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Interface Pattern</td><td class='val'>Grid</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Roof Pattern</td><td class='val'>Grid</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Floor Pattern</td><td class='val'>Grid</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Minimum Support Interface Area</td><td class='val'>10</td><td class='w-10'>mm²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Minimum Support Roof Area</td><td class='val'>10</td><td class='w-10'>mm²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Minimum Support Floor Area</td><td class='val'>10</td><td class='w-10'>mm²</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Interface Horizontal Expansion</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Roof Horizontal Expansion</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Floor Horizontal Expansion</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Interface Line Directions</td><td class='val'>[ ]</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Roof Line Directions</td><td class='val'>[ ]</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Floor Line Directions</td><td class='val'>[ ]</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Fan Speed Override</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Supported Skin Fan Speed</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Use Towers</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Tower Diameter</td><td class='val'>3</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Maximum Tower-Supported Diameter</td><td class='val'>3</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Tower Roof Angle</td><td class='val'>65</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Drop Down Support Mesh</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Scene Has Support Meshes</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='category'><td colspan='3'>Build Plate Adhesion</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Enable Prime Blob</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Extruder Prime X Position</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Extruder Prime Y Position</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Build Plate Adhesion Type</td><td class='val'>Brim</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Build Plate Adhesion Extruder</td><td class='val'>-1</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Skirt/Brim Extruder</td><td class='val'>-1</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Base Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Middle Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Top Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Skirt Line Count</td><td class='val'>3</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Skirt Distance</td><td class='val'>10</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Skirt/Brim Minimum Length</td><td class='val'>250</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Brim Width</td><td class='val'>8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-1'>Brim Line Count</td><td class='val'>20</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Brim Distance</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Brim Replaces Support</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Brim Only on Outside</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Brim Inside Avoid Margin</td><td class='val'>2.5</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Extra Margin</td><td class='val'>15</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Smoothing</td><td class='val'>5</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Air Gap</td><td class='val'>0.3</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Initial Layer Z Overlap</td><td class='val'>0.15</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Top Layers</td><td class='val'>2</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Top Layer Thickness</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Top Line Width</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Top Spacing</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Middle Layers</td><td class='val'>1</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Middle Thickness</td><td class='val'>0.3</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Middle Line Width</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Middle Spacing</td><td class='val'>1</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Base Thickness</td><td class='val'>0.24</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Base Line Width</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Base Line Spacing</td><td class='val'>1.6</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Print Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Top Print Speed</td><td class='val'>25</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Middle Print Speed</td><td class='val'>18.75</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Base Print Speed</td><td class='val'>18.75</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Print Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Top Print Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Middle Print Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Base Print Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Print Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Top Print Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Middle Print Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Base Print Jerk</td><td class='val'>8</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Fan Speed</td><td class='val'>0</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Top Fan Speed</td><td class='val'>0</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Middle Fan Speed</td><td class='val'>0</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Raft Base Fan Speed</td><td class='val'>0</td><td class='w-10'>%</td></tr>
+<tr class='category'><td colspan='3'>Mesh Fixes</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Union Overlapping Volumes</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Remove All Holes</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extensive Stitching</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Keep Disconnected Faces</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Merged Meshes Overlap</td><td class='val'>0.15</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Remove Mesh Intersection</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Alternate Mesh Removal</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Remove Empty First Layers</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Resolution</td><td class='val'>0.25</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Travel Resolution</td><td class='val'>0.25</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Deviation</td><td class='val'>0.025</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Extrusion Area Deviation</td><td class='val'>50000</td><td class='w-10'>μm²</td></tr>
+<tr class='category'><td colspan='3'>Special Modes</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Print Sequence</td><td class='val'>All at Once</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Mesh</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Mesh Processing Rank</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Cutting Mesh</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Mold</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Minimal Mold Width</td><td class='val'>5</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Mold Roof Height</td><td class='val'>0.5</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Mold Angle</td><td class='val'>40</td><td class='w-10'>°</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Support Mesh</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Anti Overhang Mesh</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Surface Mode</td><td class='val'>Normal</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Spiralize Outer Contour</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Smooth Spiralized Contours</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Relative Extrusion</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='category'><td colspan='3'>Experimental</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Slicing Tolerance</td><td class='val'>Middle</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Infill Travel Optimization</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Flow Temperature Graph</td><td class='val'>[[3.5, 200],[7.0, 240]]</td><td class='w-10'>[[mm³,°C]]</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Minimum Polygon Circumference</td><td class='val'>1</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Generate Interlocking Structure</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Interlocking Beam Width</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Interlocking Structure Orientation</td><td class='val'>22.5</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Interlocking Beam Layer Count</td><td class='val'>2</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Interlocking Depth</td><td class='val'>2</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Interlocking Boundary Avoidance</td><td class='val'>2</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Break Up Support In Chunks</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Support Chunk Size</td><td class='val'>20</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Support Chunk Line Count</td><td class='val'>10</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Draft Shield</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Draft Shield X/Y Distance</td><td class='val'>10</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Draft Shield Limitation</td><td class='val'>Full</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Draft Shield Height</td><td class='val'>10</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Make Overhang Printable</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Maximum Model Angle</td><td class='val'>50</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Maximum Overhang Hole Area</td><td class='val'>0</td><td class='w-10'>mm²</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Coasting</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Coasting Volume</td><td class='val'>0.064</td><td class='w-10'>mm³</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Minimum Volume Before Coasting</td><td class='val'>0.8</td><td class='w-10'>mm³</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Coasting Speed</td><td class='val'>90</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Cross 3D Pocket Size</td><td class='val'>6</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Cross Infill Density Image</td><td class='val'></td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Cross Fill Density Image for Support</td><td class='val'></td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Enable Conical Support</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Conical Support Angle</td><td class='val'>30</td><td class='w-10'>°</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Conical Support Minimum Width</td><td class='val'>5</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Fuzzy Skin</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Fuzzy Skin Outside Only</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Fuzzy Skin Thickness</td><td class='val'>0.3</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Fuzzy Skin Density</td><td class='val'>1.25</td><td class='w-10'>1/mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Fuzzy Skin Point Distance</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Flow Rate Compensation Max Extrusion Offset</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Flow Rate Compensation Factor</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wire Printing</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Connection Height</td><td class='val'>3</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Roof Inset Distance</td><td class='val'>3</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Speed</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>WP Bottom Printing Speed</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>WP Upward Printing Speed</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>WP Downward Printing Speed</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>WP Horizontal Printing Speed</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>WP Connection Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>WP Flat Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Top Delay</td><td class='val'>0</td><td class='w-10'>s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Bottom Delay</td><td class='val'>0</td><td class='w-10'>s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Flat Delay</td><td class='val'>0.1</td><td class='w-10'>s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Ease Upward</td><td class='val'>0.3</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Knot Size</td><td class='val'>0.6</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Fall Down</td><td class='val'>0.5</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Drag Along</td><td class='val'>0.6</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Strategy</td><td class='val'>Compensate</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Straighten Downward Lines</td><td class='val'>20</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Roof Fall Down</td><td class='val'>2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Roof Drag Along</td><td class='val'>0.8</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Roof Outer Delay</td><td class='val'>0.2</td><td class='w-10'>s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>WP Nozzle Clearance</td><td class='val'>1</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Use Adaptive Layers</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Adaptive Layers Maximum Variation</td><td class='val'>0.04</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Adaptive Layers Variation Step Size</td><td class='val'>0.04</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Adaptive Layers Topography Size</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Overhanging Wall Angle</td><td class='val'>90</td><td class='w-10'>°</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Overhanging Wall Speed</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Bridge Settings</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Minimum Bridge Wall Length</td><td class='val'>2.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Skin Support Threshold</td><td class='val'>50</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Sparse Infill Max Density</td><td class='val'>0</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Wall Coasting</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Wall Speed</td><td class='val'>12.5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Wall Flow</td><td class='val'>50</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Skin Speed</td><td class='val'>12.5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Skin Flow</td><td class='val'>60</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Skin Density</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Fan Speed</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Has Multiple Layers</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Second Skin Speed</td><td class='val'>12.5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Second Skin Flow</td><td class='val'>100</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Second Skin Density</td><td class='val'>75</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Second Skin Fan Speed</td><td class='val'>0</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Third Skin Speed</td><td class='val'>12.5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Third Skin Flow</td><td class='val'>110</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Third Skin Density</td><td class='val'>80</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Bridge Third Skin Fan Speed</td><td class='val'>0</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wipe Nozzle Between Layers</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Material Volume Between Wipes</td><td class='val'>10</td><td class='w-10'>mm³</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Retraction Enable</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Retraction Distance</td><td class='val'>1.5</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Retraction Extra Prime Amount</td><td class='val'>0</td><td class='w-10'>mm³</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Retraction Speed</td><td class='val'>35</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Wipe Retraction Retract Speed</td><td class='val'>35</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Wipe Retraction Prime Speed</td><td class='val'>35</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Pause</td><td class='val'>0</td><td class='w-10'>s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Z Hop</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Z Hop Height</td><td class='val'>0.2</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Hop Speed</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Brush X Position</td><td class='val'>100</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Repeat Count</td><td class='val'>5</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Wipe Move Distance</td><td class='val'>20</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Small Hole Max Size</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-1'>Small Feature Max Length</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Small Feature Speed</td><td class='val'>50</td><td class='w-10'>%</td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Small Feature Initial Layer Speed</td><td class='val'>50</td><td class='w-10'>%</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Alternate Wall Directions</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Remove Raft Inside Corners</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Raft Base Wall Count</td><td class='val'>1</td><td class='w-10'></td></tr>
+<tr class='category'><td colspan='3'>Machine</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Machine Type</td><td class='val'>Creality CR-10S</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Show Machine Variants</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Start G-code</td><td class='val'>M220 S100 ;Reset Feedrate
+M221 S100 ;Reset Flowrate
+
+M280 P0 S160 ;reset bltouch
+G28 ;Home
+G29 A ; enable UBL
+G92 E0 ;Reset Extruder
+G1 Z2.0 F3000 ;Move Z Axis up
+G1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position
+G1 X10.1 Y200.0 Z0.28 F1500.0 E15 ;Draw the first line
+G1 X10.4 Y200.0 Z0.28 F5000.0 ;Move to side a little
+G1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line
+G92 E0 ;Reset Extruder
+G1 Z2.0 F3000 ;Move Z Axis up</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>End G-code</td><td class='val'>G91 ;Relative positioning
+G1 E-2 F2700 ;Retract a bit
+G1 E-2 Z0.2 F2400 ;Retract and raise Z
+G1 X5 Y5 F3000 ;Wipe out
+G1 Z10 ;Raise Z more
+G90 ;Absolute positioning
+
+G1 X0 Y{machine_depth} ;Present print
+M106 S0 ;Turn-off fan
+M104 S0 ;Turn-off hotend
+M140 S0 ;Turn-off bed
+
+M84 X Y E ;Disable all steppers but Z
+</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Material GUID</td><td class='val'>0ff92885-617b-4144-a03c-9989872454bc</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Diameter</td><td class='val'>1.75</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wait for Build Plate Heatup</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Wait for Nozzle Heatup</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Include Material Temperatures</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Include Build Plate Temperature</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Machine Width</td><td class='val'>300</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Machine Depth</td><td class='val'>300</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Machine Height</td><td class='val'>320</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Build Plate Shape</td><td class='val'>Rectangular</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Build Plate Material</td><td class='val'>Glass</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Has Heated Build Plate</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Has Build Volume Temperature Stabilization</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Always Write Active Tool</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Is Center Origin</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Number of Extruders</td><td class='val'>1</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Number of Extruders That Are Enabled</td><td class='val'>1</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Outer Nozzle Diameter</td><td class='val'>1</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle Length</td><td class='val'>3</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle Angle</td><td class='val'>45</td><td class='w-10'>°</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Heat Zone Length</td><td class='val'>16</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Enable Nozzle Temperature Control</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Heat Up Speed</td><td class='val'>2</td><td class='w-10'>°C/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Cool Down Speed</td><td class='val'>2</td><td class='w-10'>°C/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Minimal Time Standby Temperature</td><td class='val'>50</td><td class='w-10'>s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>G-code Flavor</td><td class='val'>Marlin</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Firmware Retraction</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruders Share Heater</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruders Share Nozzle</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='disabled'><td class='w-70 pl-0'>Shared Nozzle Initial Retraction</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Disallowed Areas</td><td class='val'>[]</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle Disallowed Areas</td><td class='val'>[]</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Machine Head & Fan Polygon</td><td class='val'>[[-26, 34], [-26, -32], [32, -32], [32, 34]]</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Gantry Height</td><td class='val'>25</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle ID</td><td class='val'>unknown</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle Diameter</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Offset with Extruder</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder Prime Z Position</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Absolute Extruder Prime Position</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Speed X</td><td class='val'>500</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Speed Y</td><td class='val'>500</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Speed Z</td><td class='val'>10</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Speed E</td><td class='val'>50</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Acceleration X</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Acceleration Y</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Acceleration Z</td><td class='val'>100</td><td class='w-10'>mm/s²</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Maximum Filament Acceleration</td><td class='val'>5000</td><td class='w-10'>mm/s²</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Default Acceleration</td><td class='val'>500</td><td class='w-10'>mm/s²</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Default X-Y Jerk</td><td class='val'>10</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Default Z Jerk</td><td class='val'>0.4</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Default Filament Jerk</td><td class='val'>5</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Steps per Millimeter (X)</td><td class='val'>50</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Steps per Millimeter (Y)</td><td class='val'>50</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Steps per Millimeter (Z)</td><td class='val'>50</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Steps per Millimeter (E)</td><td class='val'>1600</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>X Endstop in Positive Direction</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Y Endstop in Positive Direction</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Z Endstop in Positive Direction</td><td class='val'>True</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Minimum Feedrate</td><td class='val'>0</td><td class='w-10'>mm/s</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Feeder Wheel Diameter</td><td class='val'>10</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Scale Fan Speed To 0-1</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='category'><td colspan='3'>Extruder : 1 Machine</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder Prime Z Position</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder Print Cooling Fan</td><td class='val'>0</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder End G-Code</td><td class='val'></td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder End Position Absolute</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder End Position X</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder End Position Y</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder Start G-Code</td><td class='val'></td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder Start Position Absolute</td><td class='val'>False</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder Start Position X</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Extruder Start Position Y</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle ID</td><td class='val'>unknown</td><td class='w-10'></td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle X Offset</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle Y Offset</td><td class='val'>0</td><td class='w-10'>mm</td></tr>
+<tr class='normal'><td class='w-70 pl-0'>Nozzle Diameter</td><td class='val'>0.4</td><td class='w-10'>mm</td></tr>
+</table></body></html>
