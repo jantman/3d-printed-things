@@ -1,6 +1,7 @@
 led_width = 10.14;
 led_length = 51.15;
-led_hole_dia = 2.3;
+led_hole_dia = 2.4; // M2 screw normal fit H13
+led_countersink_dia = 4.4; // M2 countersink
 led_thickness = 1.65;
 led_hole_inset_long_axis = 11.8 + (led_hole_dia / 2);
 led_hole_inset_short_axis = 1 + (led_hole_dia / 2);
@@ -53,8 +54,16 @@ module plate() {
         translate([led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -10]) {
             cylinder(d=led_hole_dia, h=20);
         }
+        // countersink
+        translate([led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -1 * (plate_thickness)]) {
+            cylinder(h=1, d2=led_hole_dia, d1=led_countersink_dia);
+        }
         translate([led_length - led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -10]) {
             cylinder(d=led_hole_dia, h=20);
+        }
+                // countersink
+        translate([led_length - led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -1 * (plate_thickness)]) {
+            cylinder(h=1, d2=led_hole_dia, d1=led_countersink_dia);
         }
         // cutout for solder pads
         translate([-1, 0, -5]) {
