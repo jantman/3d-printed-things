@@ -42,6 +42,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [my-cr10s/](my-cr10s/) - a complete 3D model of my CR-10S printer, as currently equipped, minus wires and filament. Plus components I've printed for it, my Marlin firmware configs, test/troubleshooting prints, etc.
 
+## Neopixel Mounts
+
+[neopixel-mounts/](neopixel-mounts/) - Various 3d printer mounts for Neopixels and similar LEDs.
+
 ## Pegboard Accessories
 
 [pegboard/](pegboard/) - A collection of holders for US standard 1"-on-center pegboard.
