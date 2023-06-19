@@ -8,4 +8,4 @@ Various 3d printer mounts for Neopixels and similar LEDs
 
 ## Adafruit 2868 NeoPixel Mounting Bar
 
-`adafruit-2868-mounting-bar` - A small bar to screw an [Adafruit 2868 NeoPixel Stick - 8 x 5050 RGBW LEDs](https://www.adafruit.com/product/2868#technical-details) to with two M2 screws, and in turn allow it to easily be mounted to a printer extrusion using a pair of M4 screws and T-nuts.
+`adafruit-2868-mounting-bar` - A small bar to screw an [Adafruit 2868 NeoPixel Stick - 8 x 5050 RGBW LEDs](https://www.adafruit.com/product/2868#technical-details) to with two M2 screws and nylon nuts, and in turn allow it to easily be mounted to a printer extrusion (2020 V-slot) using a pair of M4x10 screws and T-nuts.
