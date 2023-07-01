@@ -1,5 +1,5 @@
-spacing = inch(9/16);
-spacing_str = "9/16\"";
+spacing = inch(0.5);
+spacing_str = "1/2\"";
 spacer_width = inch(1);
 spacer_height = inch(0.5);
 backer_length = inch(3);
