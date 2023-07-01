@@ -22,6 +22,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [air-connector-dust-cover/](air-connector-dust-cover/) - A dust cover for standard 1/4" Industrial (a.k.a "I/M" or "Milton M-style" or "Type D") air tool connectors.
 
+## Blast Gate Switch Mount
+
+[blast_gate_switch_mount/](blast_gate_switch_mount/) - A 3d printed piece to mount a miniature snap-action switch on plastic 4" dust collection blast gates such as those sold by PowerTec and Fulton Woodworking.
+
 ## Cabinet Spacer
 
 [cabinet-spacer/](cabinet-spacer/) - Spacer for assembling cabinets that need a 9/16" gap maintained between them.
