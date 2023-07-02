@@ -1,7 +1,7 @@
 // CONFIGURATION
 hole_diameter = inch(0.14);
 plate_length = inch(2);
-plate_width = inch(1.5);
+plate_width = inch(2.5);
 plate_thickness = inch(0.12);
 switch_offset = inch(0);
 slot_width = 4.5; // M4 medium fit clearance
@@ -14,7 +14,7 @@ use <../BOSL/metric_screws.scad>;
 $fn = 360;
 
 // blast gate specs
-step_height = inch(0.1);
+step_height = inch(0.135);
 lip_width = inch(0.4);
 
 // switch specs
@@ -36,13 +36,13 @@ difference() {
     // bottom left hole
     translate([switch_hole_inset, switch_hole_inset, -1 * plate_thickness]) {
         rotate([180, 0, 0]) {
-            metric_bolt(size=3, headtype="countersunk", l=20, pitch=0, align="sunken");
+            metric_bolt(size=3.15, headtype="countersunk", l=20, pitch=0, align="sunken");
         }
     }
     // top right hole
     translate([switch_hole_inset + (switch_length - (switch_hole_inset * 2)), switch_hole_inset + switch_thickness, -1 * plate_thickness]) {
         rotate([180, 0, 0]) {
-            metric_bolt(size=3, headtype="countersunk", l=20, pitch=0, align="sunken");
+            metric_bolt(size=3.15, headtype="countersunk", l=20, pitch=0, align="sunken");
         }
     }
 }
@@ -59,7 +59,8 @@ module plate() {
                 cube([lip_width, plate_width, step_height + 0.1]);
             }
         }
-        translate([(plate_length - lip_width) + (lip_width / 2), 0, -20]) {
+        // screw slot
+        translate([(plate_length - lip_width) + (lip_width / 2), -1 * ((plate_width / 2) - switch_width + switch_offset), -20]) {
             roundedslot(slot_length, slot_width);
         }
     }
@@ -67,7 +68,7 @@ module plate() {
 
 module roundedslot(length, width) {
     height = 40;
-    translate([-1 * (width / 2), -1 * (length / 2), 0]) {
+    translate([-1 * (width / 2), -1 * (length / 2) + (width / 2), 0]) {
         cube([width, length - width, height]);
         translate([width / 2, 0, 0]) {
             cylinder(h=height, d=width);
