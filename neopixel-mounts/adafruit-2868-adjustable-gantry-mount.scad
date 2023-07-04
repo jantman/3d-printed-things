@@ -1,0 +1,89 @@
+led_width = 10.14;
+led_length = 51.15;
+led_hole_dia = 2.4; // M2 screw normal fit H13
+led_countersink_dia = 4.4; // M2 countersink
+led_thickness = 1.65;
+led_hole_inset_long_axis = 11.8 + (led_hole_dia / 2);
+led_hole_inset_short_axis = 1 + (led_hole_dia / 2);
+solder_pad_length = 6;
+
+plate_width = 20;
+plate_length = 80;
+plate_thickness = 2.5;
+
+leg_setback = 20;
+mounting_hole = 5.5;
+leg_length = leg_setback + mounting_hole + 5;
+
+$fn = 360;
+
+show_bar = false;
+
+if(show_bar) {
+    bar();
+}
+color("red") {
+    plate();
+}
+
+module bar() {
+    difference() {
+        union() {
+            color("green") {
+                cube([led_length, led_width, led_thickness]);
+            }
+            color("gold") {
+                translate([0, 0, -0.1]) {
+                    cube([solder_pad_length, led_width, led_thickness + 0.2]);
+                }
+            }
+        }
+        // screw holes
+        translate([led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -1 * led_thickness]) {
+            cylinder(d=led_hole_dia, h=led_thickness * 2);
+        }
+        translate([led_length - led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -1 * led_thickness]) {
+            cylinder(d=led_hole_dia, h=led_thickness * 2);
+        }
+    }
+}
+
+module plate() {
+    difference() {
+        union() {
+            // LED mounting plate
+            translate([-1 * (plate_length - led_length) / 2, -1 * (plate_width - led_width) / 2, -1 * plate_thickness]) {
+                cube([plate_length, plate_width, plate_thickness]);
+            }
+            // gantry mounting leg
+            translate([-1 * (plate_length - led_length) / 2, -1 * (plate_width - led_width) / 2, -1 * plate_thickness]) {
+                cube([plate_thickness, plate_width, leg_length]);
+            }
+        }
+        // mounting hole
+        translate([(-1 * (plate_length - led_length) / 2) - 4, (plate_width - led_width) / 2, leg_setback]) {
+            rotate([0, 90, 0]) {
+                cylinder(d=mounting_hole, h=20);
+            }
+        }
+        // LED screw holes
+        translate([led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -10]) {
+            cylinder(d=led_hole_dia, h=20);
+        }
+        // countersink
+        translate([led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -1 * (plate_thickness)]) {
+            cylinder(h=1, d2=led_hole_dia, d1=led_countersink_dia);
+        }
+        translate([led_length - led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -10]) {
+            cylinder(d=led_hole_dia, h=20);
+        }
+                // countersink
+        translate([led_length - led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -1 * (plate_thickness)]) {
+            cylinder(h=1, d2=led_hole_dia, d1=led_countersink_dia);
+        }
+        // cutout for solder pads
+        translate([-1, 0, -5]) {
+            cube([solder_pad_length + 3, led_width, 10]);
+        }
+    }
+}
