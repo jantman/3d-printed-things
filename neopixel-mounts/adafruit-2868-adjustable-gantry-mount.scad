@@ -7,9 +7,11 @@ led_hole_inset_long_axis = 11.8 + (led_hole_dia / 2);
 led_hole_inset_short_axis = 1 + (led_hole_dia / 2);
 solder_pad_length = 6;
 
-plate_width = 20;
+plate_width = 40;
 plate_length = 80;
 plate_thickness = 2.5;
+
+adjustability = 20;
 
 leg_setback = 20;
 mounting_hole = 5.5;
@@ -59,31 +61,43 @@ module plate() {
             translate([-1 * (plate_length - led_length) / 2, -1 * (plate_width - led_width) / 2, -1 * plate_thickness]) {
                 cube([plate_thickness, plate_width, leg_length]);
             }
+            // fillet
+            translate([(-1 * (plate_length - led_length) / 2) + plate_thickness - 0.01, -1 * (plate_width - led_width) / 2, -0.01]) {
+                fillet(plate_width, plate_thickness);
+            }
         }
         // mounting hole
-        translate([(-1 * (plate_length - led_length) / 2) - 4, (plate_width - led_width) / 2, leg_setback]) {
+        translate([(-1 * (plate_length - led_length) / 2) - 4, (-1 * (plate_width - led_width) / 2) + (plate_width / 2), leg_setback]) {
             rotate([0, 90, 0]) {
                 cylinder(d=mounting_hole, h=20);
             }
         }
         // LED screw holes
         translate([led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -10]) {
-            cylinder(d=led_hole_dia, h=20);
-        }
-        // countersink
-        translate([led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -1 * (plate_thickness)]) {
-            cylinder(h=1, d2=led_hole_dia, d1=led_countersink_dia);
+            cube([led_hole_dia, led_hole_dia + adjustability, 20], center=true);
         }
         translate([led_length - led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -10]) {
-            cylinder(d=led_hole_dia, h=20);
-        }
-                // countersink
-        translate([led_length - led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -1 * (plate_thickness)]) {
-            cylinder(h=1, d2=led_hole_dia, d1=led_countersink_dia);
+            cube([led_hole_dia, led_hole_dia + adjustability, 20], center=true);
         }
         // cutout for solder pads
-        translate([-1, 0, -5]) {
-            cube([solder_pad_length + 3, led_width, 10]);
+        translate([-1, -1 * adjustability / 2, -5]) {
+            cube([solder_pad_length + 3, led_width + adjustability, 10]);
+        }
+    }
+}
+
+module fillet(length, radius) {
+    intersection() {
+        difference() {
+            cube([radius * 2, length, radius * 2]);
+            translate([radius, 0, radius]) {
+                rotate([-90, 0, 0]) {
+                    cylinder(r=radius, h=length);
+                }
+            }
+        }
+        translate([0, 0, 0]) {
+            cube([radius, length, radius]);
         }
     }
 }
