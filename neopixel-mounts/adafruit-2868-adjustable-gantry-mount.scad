@@ -7,15 +7,16 @@ led_hole_inset_long_axis = 11.8 + (led_hole_dia / 2);
 led_hole_inset_short_axis = 1 + (led_hole_dia / 2);
 solder_pad_length = 6;
 
-plate_width = 40;
-plate_length = 80;
-plate_thickness = 2.5;
-
 adjustability = 20;
 
 leg_setback = 20;
+leg_to_led = 20;
 mounting_hole = 5.5;
 leg_length = leg_setback + mounting_hole + 5;
+
+plate_width = 40;
+plate_length = 80 + leg_to_led;
+plate_thickness = 2.5;
 
 $fn = 360;
 
@@ -73,14 +74,14 @@ module plate() {
             }
         }
         // LED screw holes
-        translate([led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -10]) {
+        translate([led_hole_inset_long_axis + leg_to_led, led_width - led_hole_inset_short_axis, -10]) {
             cube([led_hole_dia, led_hole_dia + adjustability, 20], center=true);
         }
-        translate([led_length - led_hole_inset_long_axis, led_width - led_hole_inset_short_axis, -10]) {
+        translate([led_length - led_hole_inset_long_axis + leg_to_led, led_width - led_hole_inset_short_axis, -10]) {
             cube([led_hole_dia, led_hole_dia + adjustability, 20], center=true);
         }
         // cutout for solder pads
-        translate([-1, -1 * adjustability / 2, -5]) {
+        translate([-1 + leg_to_led, -1 * adjustability / 2, -5]) {
             cube([solder_pad_length + 3, led_width + adjustability, 10]);
         }
     }
