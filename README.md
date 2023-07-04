@@ -42,6 +42,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [keyboard-cover/](keyboard-cover/) - A cover for a Leopold FC200RT/KB "tenkeyless" mechanical keyboard.
 
+## Limit Switch Brackets
+
+[limit-switch-brackets/](limit-switch-brackets/) - Some brackets for mounting generic limit switches.
+
 ## My CR-10S Printer
 
 [my-cr10s/](my-cr10s/) - a complete 3D model of my CR-10S printer, as currently equipped, minus wires and filament. Plus components I've printed for it, my Marlin firmware configs, test/troubleshooting prints, etc.
