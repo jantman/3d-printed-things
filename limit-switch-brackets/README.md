@@ -11,3 +11,5 @@ In general, the switches we're talking about here are:
 
 * `mini_yz` - A tall L-bracket for the mini switches, with mounting screw slots for adjustment in the Y and Z axes.
 * `submini_yz` - A tall L-bracket for the submini switches, with mounting screw slots for adjustment in the Y and Z axes.
+
+[![photo of brackets](brackets_sm.jpg)](brackets.jpg)
