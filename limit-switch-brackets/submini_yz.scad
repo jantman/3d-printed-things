@@ -9,7 +9,7 @@ arm_slot_length = arm_height * 0.75;
 switch_model_file = "7658K15.stl";
 switch_length = inch(0.79);
 switch_width = inch(0.63);
-switch_thickness = inch(0.41);
+switch_thickness = inch(0.26);
 switch_hole_diameter = 2.5;
 switch_hole_spacing = 9.5;
 
