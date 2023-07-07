@@ -9,8 +9,8 @@ In general, the switches we're talking about here are:
 
 ## Brackets
 
-* `mini_yz` - A tall L-bracket for the mini switches, with mounting screw slots for adjustment in the Y and Z axes.
-* `submini_yz` - A tall L-bracket for the submini switches, with mounting screw slots for adjustment in the Y and Z axes.
+* `mini_yz` - A tall L-bracket for the mini switches, with mounting screw slots for adjustment in the Y and Z axes. Switch mounts with M3x16mm socket head cap screws with a washer and nut on the back.
+* `submini_yz` - A tall L-bracket for the submini switches, with mounting screw slots for adjustment in the Y and Z axes. Switch mounts with M2.5x12mm socket head cap screws with a washer and nut on the back.
 
 [![photo of brackets](brackets_sm.jpg)](brackets.jpg)
 
@@ -18,4 +18,4 @@ In general, the switches we're talking about here are:
 
 `sargent-20-latch-switch`
 
-This is a bracket specific to fitting inside the latchbolt chassis on a [Sargent 20-series Exit Device](https://www.sargentlock.com/en/commercial-locks-products/exit-devices-panic-bars/mechanical/product-details.aehpdp-20-seriess-aeh_sargent_58951), for mounting a limit switch to detect when the latch is retracted (i.e. either via the bar being depressed, or the bar being dogged down).
+This is a bracket specific to fitting inside the latchbolt chassis on a [Sargent 20-series Exit Device](https://www.sargentlock.com/en/commercial-locks-products/exit-devices-panic-bars/mechanical/product-details.aehpdp-20-seriess-aeh_sargent_58951), for mounting a limit switch to detect when the latch is retracted (i.e. either via the bar being depressed, or the bar being dogged down).  Switch mounts with M2.5x16mm socket head cap screws with a nut on the back.
