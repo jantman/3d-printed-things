@@ -514,7 +514,8 @@ module metric_bolt(
 	torx=undef,
 	flange=0,
 	orient=ORIENT_Z,
-	align="base"
+	align="base",
+	include_internal_hex=true
 ) {
 	D = headtype != "hex"?
 		get_metric_socket_cap_diam(size) :
@@ -575,7 +576,7 @@ module metric_bolt(
 						sockd = get_metric_socket_cap_socket_depth(size);
 						difference() {
 							cylinder(d=D, h=H, center=false);
-							up(H-sockd) cylinder(h=sockd+0.1, d=sockw/cos(30), center=false, $fn=6);
+							if(include_internal_hex) { up(H-sockd) cylinder(h=sockd+0.1, d=sockw/cos(30), center=false, $fn=6); }
 							if (details) {
 								kcnt = 36;
 								zring(n=kcnt, r=D/2) up(H/3) upcube([PI*D/kcnt/2, PI*D/kcnt/2, H]);

@@ -12,6 +12,7 @@ show_switch = true;
 // END CONFIGURATION /
 //////////////////////
 
+use <../BOSL/metric_screws.scad>;
 $fn = 360;
 
 switch_model_file = "7658K15.stl";
@@ -38,6 +39,16 @@ difference() {
     translate([block_length - 9, switch_hole_cl_from_bottom, block_height - (switch_hole_cl_from_front + switch_hole_spacing)]) {
         rotate([0, 90, 0]) {
             cylinder(d=switch_hole_diameter, h=10);
+        }
+    }
+    translate([(block_length - (cutout_width + cutout_offset)), -0.01, block_height - 5]) {
+        rotate([90, 0, 0]) {
+            metric_bolt(size=4.2, headtype="socket", l=block_depth, pitch=0, align="sunken", include_internal_hex=false);
+        }
+    }
+    translate([cutout_width + (cutout_offset / 2), cutout_depth - 0.5, 5]) {
+        rotate([90, 0, 0]) {
+            metric_bolt(size=4.2, headtype="socket", l=block_depth, pitch=0, align="sunken", include_internal_hex=false);
         }
     }
 }
