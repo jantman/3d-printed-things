@@ -34,6 +34,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [dremel-grinding-stone-holder/](dremel-grinding-stone-holder/) - A block with holes in it, to hold a set of 56 1/8" (3mm) shaft grinding stones, such as for a Dremel tool. Designed for stones up to 12mm (~1/2") diameter.
 
+## ESP32 Boxes
+
+[esp32-boxes/](esp32-boxes/) - Various boxes for projects using the ESP32 microcontroller.
+
 ## Half-Lap Templates
 
 [half_lap_templates/](half_lap_templates/) - A set of templates for marking half-lap joints on dimensional lumber (currently US 2x4's), along with blocks for setting depth stops on saws and routers.
