@@ -124,10 +124,10 @@ inspectButtons      = 0;        //-> { -1 | 0 | 1 }
 // (7) = { yappAllCorners | yappFrontLeft | yappFrondRight | yappBackLeft | yappBackRight }
 
 pcbStands = [
-  [ inch(0.088), inch(0.0525), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ],
-  [ inch(0.088), pcbWidth - inch(0.0525), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ],
-  [ pcbLength - inch(0.088), inch(0.0525), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ],
-  [ pcbLength - inch(0.088), pcbWidth - inch(0.0525), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ],
+  [ inch(0.088), inch(0.0525), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ], // back left
+  [ inch(0.088), pcbWidth - inch(0.0525) - (standoffPinDiameter / 2), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ], // back right
+  [ pcbLength - inch(0.088), inch(0.0525), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ], // front left
+  [ pcbLength - inch(0.088), pcbWidth - inch(0.0525) - (standoffPinDiameter / 2), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ], // front right
 ];
 
 //-- base plane    -- origin is pcb[0,0,0]
