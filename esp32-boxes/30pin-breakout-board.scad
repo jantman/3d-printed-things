@@ -54,7 +54,7 @@ function inch(x) = x * 25.4;
 
 //-- which part(s) do you want to print?
 printBaseShell        = true;
-printLidShell         = false;
+printLidShell         = true;
 printSwitchExtenders  = false;
 
 //-- pcb dimensions -- very important!!!
@@ -89,7 +89,7 @@ roundRadius         = 2.0;
 
 //-- How much the PCB needs to be raised from the base
 //-- to leave room for solderings and whatnot
-standoffHeight      = inch(0.0);  //-- only used for showPCB
+standoffHeight      = inch(0.15);  //-- only used for showPCB
 standoffPinDiameter = inch(0.110);
 standoffHoleSlack   = 0.3;
 standoffDiameter    = 7;
@@ -124,10 +124,10 @@ inspectButtons      = 0;        //-> { -1 | 0 | 1 }
 // (7) = { yappAllCorners | yappFrontLeft | yappFrondRight | yappBackLeft | yappBackRight }
 
 pcbStands = [
-  [ inch(0.088), inch(0.0525), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ], // back left
-  [ inch(0.088), pcbWidth - inch(0.0525) - (standoffPinDiameter / 2) - 1, standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ], // back right
-  [ pcbLength - inch(0.088), inch(0.0525), standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ], // front left
-  [ pcbLength - inch(0.088), pcbWidth - inch(0.0525) - (standoffPinDiameter / 2) - 1, standoffHeight, 0, 0, yappBoth, yappPin, yappBackLeft ], // front right
+  [ inch(0.088), inch(0.0525), standoffHeight, 4, 9, yappBoth, yappPin, yappBackLeft ], // back left
+  [ inch(0.088), pcbWidth - inch(0.0525) - (standoffPinDiameter / 2) - 1, standoffHeight, 4, 9, yappBoth, yappPin, yappBackLeft ], // back right
+  [ pcbLength - inch(0.088), inch(0.0525), standoffHeight, 4, 9, yappBoth, yappPin, yappBackLeft ], // front left
+  [ pcbLength - inch(0.088), pcbWidth - inch(0.0525) - (standoffPinDiameter / 2) - 1, standoffHeight, 4, 9, yappBoth, yappPin, yappBackLeft ], // front right
 ];
 
 //-- base plane    -- origin is pcb[0,0,0]
@@ -358,12 +358,4 @@ module baseHookOutside()
 } // baseHookOutside(dummy)
 
 
-
-
-//---- This is where the magic happens ----
-intersection() {
-  translate([7, 10, 0]) {
-    cube([pcbLength, pcbWidth + 3, 10]);
-  }
-  YAPPgenerate();
-}
+YAPPgenerate();
