@@ -271,16 +271,9 @@ baseMounts   =  [
 // (2..5) = yappLeft / yappRight / yappFront / yappBack (one or more)
 // (n) = { yappSymmetric }
 snapJoins   =   [
-                  [(pcbWidth/2), 3, yappBack]
-                , [(pcbLength/2)+6, 3, yappLeft]
-                , [(pcbLength/2)+6, 3, yappRight]
-
-              //    [2,               5, yappLeft, yappRight, yappSymmetric]
-              //    [5,              10, yappLeft]
-              //  , [shellLength-2,  10, yappLeft]
-              //  , [20,             10, yappFront, yappBack]
-              //  , [2.5,             5, yappBack,  yappFront, yappSymmetric]
-                ];
+  [ 10, 5, yappLeft, yappRight, yappSymmetric ],
+  [ (pcbLength + paddingBack + paddingFront) / 2, 5, yappLeft, yappRight ]
+];
                
 //-- lightTubes  -- origin is pcb[0,0,0]
 // (0) = posx
