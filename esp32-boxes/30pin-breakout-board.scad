@@ -90,7 +90,7 @@ roundRadius         = 2.0;
 //-- How much the PCB needs to be raised from the base
 //-- to leave room for solderings and whatnot
 standoffHeight      = inch(0.15);  //-- only used for showPCB
-standoffPinDiameter = inch(0.110);
+standoffPinDiameter = inch(0.09);
 standoffHoleSlack   = 0.3;
 standoffDiameter    = 7;
 
