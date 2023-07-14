@@ -60,7 +60,7 @@ printSwitchExtenders  = false;
 //-- pcb dimensions -- very important!!!
 pcbLength           = inch(2.48);
 pcbWidth            = inch(2.61);
-pcbThickness        = inch(0.06);
+pcbThickness        = inch(0.08);
 
 //-- padding between pcb and inside wall
 paddingFront        = inch(3.6 - 2.48);
