@@ -70,7 +70,7 @@ paddingLeft         = inch(0.35);
 
 //-- Edit these parameters for your own box dimensions
 wallThickness       = 2.0;
-basePlaneThickness  = 1.0;
+basePlaneThickness  = 2.0;
 lidPlaneThickness   = 1.0;
 
 //-- Total height of box = basePlaneThickness + lidPlaneThickness 
