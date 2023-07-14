@@ -91,7 +91,7 @@ roundRadius         = 2.0;
 //-- to leave room for solderings and whatnot
 standoffHeight      = inch(0.15);  //-- only used for showPCB
 standoffPinDiameter = inch(0.09);
-standoffHoleSlack   = 0.3;
+standoffHoleSlack   = 0.6;
 standoffDiameter    = 7;
 
 //-- D E B U G -----------------//-> Default ---------
