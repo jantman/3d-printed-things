@@ -53,8 +53,8 @@ function inch(x) = x * 25.4;
 
 
 //-- which part(s) do you want to print?
-printBaseShell        = true;
-printLidShell         = true;
+printBaseShell        = false;
+printLidShell         = false;
 printSwitchExtenders  = false;
 
 //-- pcb dimensions -- very important!!!
@@ -350,6 +350,5 @@ module baseHookOutside()
   //echo("baseHookOutside(original) ..");
   
 } // baseHookOutside(dummy)
-
 
 YAPPgenerate();
