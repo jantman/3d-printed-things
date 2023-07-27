@@ -16,6 +16,12 @@ In general, the switches we're talking about here are:
 
 ## Sargent 20 Latch Limit Switch
 
+[![photo of final print](sargent1-sm.jpg)](sargent1.jpg)
+
+[![photo of final print](sargent2-sm.jpg)](sargent2.jpg)
+
+[![photo of final print](sargent3-sm.jpg)](sargent3.jpg)
+
 `sargent-20-latch-switch`
 
 This is a bracket specific to fitting inside the latchbolt chassis on a [Sargent 20-series Exit Device](https://www.sargentlock.com/en/commercial-locks-products/exit-devices-panic-bars/mechanical/product-details.aehpdp-20-seriess-aeh_sargent_58951), for mounting a limit switch to detect when the latch is retracted (i.e. either via the bar being depressed, or the bar being dogged down).  Switch mounts with M2.5x16mm socket head cap screws with a nut on the back. Bracket mounts to the door/exit device with a pair of M4 socket head cap screws (one 12mm long and one 30mm long) in drilled and tapped holes.
