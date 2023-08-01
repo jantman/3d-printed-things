@@ -15,6 +15,6 @@ if(show_carriage && $preview) {
 }
 
 backplate();
-translate([0, 0, 0]) {
-    clamp(inch(0.380), inch(0.580), inch(0.1));
+translate([0, inch(0.025), 0]) {
+    clamp(inch(0.380), inch(0.480), inch(0.1));
 }
