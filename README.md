@@ -30,6 +30,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [cabinet-spacer/](cabinet-spacer/) - Spacer for assembling cabinets that need a 9/16" gap maintained between them.
 
+## CR10S MicroSwiss Attachments
+
+[cr10s-microswiss-attachments/](cr10s-microswiss-attachments/) - Various attachments for the carriage on a CR10(S) with a Micro-Swiss Direct Drive carriage.
+
 ## Dremel Grinding Stone Holder
 
 [dremel-grinding-stone-holder/](dremel-grinding-stone-holder/) - A block with holes in it, to hold a set of 56 1/8" (3mm) shaft grinding stones, such as for a Dremel tool. Designed for stones up to 12mm (~1/2") diameter.
