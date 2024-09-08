@@ -90,6 +90,10 @@ Files which are my own work are licensed under [CERN-OHL-W v2](https://ohwr.org/
 
 [temp-tower/](temp-tower/) generator and models
 
+## Tool Holder Blocks
+
+[tool-holder-blocks/](tool-holder-blocks/) - Various blocks with holes to store tools vertically.
+
 ## XY Dimension Test
 
 [xy_dimension_test/](xy_dimension_test/) - Various test prints for determining maximum printable size / XY dimensions.
