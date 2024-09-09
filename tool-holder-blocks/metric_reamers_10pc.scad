@@ -10,8 +10,8 @@ floor_thickness = inch(1/8);
 block_height = hole_depth + floor_thickness;
 
 // front row
-front_y = edge_inset + label_width + (8/2);
-back_y = front_y + (13/2) + hole_spacing + label_width + (13/2);
+front_y = edge_inset + label_width + 8 + inch(0.1);
+back_y = front_y + (13/2) + hole_spacing + label_width + (13/2) + inch(0.1);
 length = ((13 + hole_spacing) * 5) + (edge_inset * 2);
 
 difference() {
