@@ -12,10 +12,10 @@ function inch(n) = 25.4 * n;
 // front row
 front_y = edge_inset + label_width + inch(0.45);
 back_y = front_y + inch(0.45 / 2) + hole_spacing + label_width + inch(0.58 + 0.1);
-length = edge_inset + (inch(0.68 / 2) * 7) + (hole_spacing * 4) + inch(0.45 / 2);
+length = edge_inset + (inch(0.71 / 2) * 7) + (hole_spacing * 4) + inch(0.45 / 2);
 
 difference() {
-    cube([length, back_y + inch(0.68 / 2) + edge_inset, block_height]);
+    cube([length, back_y + inch(0.71 / 2) + edge_inset, block_height]);
     // front row
     translate([0, front_y, floor_thickness + 0.01]) {
         translate([edge_inset + inch(0.5 / 2), 0, 0]) { hole(inch(0.4)); }
@@ -26,10 +26,10 @@ difference() {
     }
     // back row
     translate([0, back_y, floor_thickness + 0.01]) {
-        translate([edge_inset + inch(0.68 / 2), 0, 0]) { hole(inch(0.58)); }
-        translate([edge_inset + (inch(0.68 / 2) * 3) + hole_spacing, 0, 0]) { hole(inch(0.565)); }
-        translate([edge_inset + (inch(0.68 / 2) * 5) + (hole_spacing * 2), 0, 0]) { hole(inch(0.45)); }
-        translate([edge_inset + (inch(0.68 / 2) * 7) + (hole_spacing * 3), 0, 0]) { hole(inch(0.44)); }
+        translate([edge_inset + inch(0.71 / 2), 0, 0]) { hole(inch(0.61)); }
+        translate([edge_inset + (inch(0.71 / 2) * 3) + hole_spacing, 0, 0]) { hole(inch(0.595)); }
+        translate([edge_inset + (inch(0.71 / 2) * 5) + (hole_spacing * 2), 0, 0]) { hole(inch(0.48)); }
+        translate([edge_inset + (inch(0.71 / 2) * 7) + (hole_spacing * 3), 0, 0]) { hole(inch(0.47)); }
     }
 }
 
