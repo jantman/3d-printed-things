@@ -1492,7 +1492,7 @@
  *     O-- FRONT --+
  */
 // got these offsets from: https://www.th3dstudio.com/hc/guides/upgrades-printer-information/creality-bl-touch-probe-mount-offsets-metal-bracket/
-#define NOZZLE_TO_PROBE_OFFSET { -44, -9, -3.79}
+#define NOZZLE_TO_PROBE_OFFSET { -44, -9, -3.40}
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
